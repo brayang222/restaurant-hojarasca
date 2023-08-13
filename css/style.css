@@ -82,11 +82,11 @@ img{
 }
 
 .azul{
-    color: var(--azul);
+    color: #168beb;
 }
 
 .rojo {
-    color: var(--rojo);
+    color: #e22128;
 }
 
 .ocultar {
@@ -183,6 +183,7 @@ img{
 .btn-verde:hover{
     background-color: #e1e1e1;
     color: #000;
+    cursor: pointer;
 }
 /*Encabezado*/
 
@@ -206,6 +207,7 @@ img{
 }
 
 .logo h2 {
+    margin-left: 40px;
     font-size: 3rem;
 }
 
@@ -374,6 +376,11 @@ img{
 
 }
 
+.contenedor-encabezado {
+    width: 100%;
+    height: calc(100% - 85px);
+}
+
 video{
     width: 100%;
     height: 100%;
@@ -500,6 +507,12 @@ video{
     border: 1px solid #e1e1e1;
     padding: 2rem;
     border-radius: 5px;
+    margin: 30px 0;
+}
+
+.platillo img{
+    min-height: 260px;
+    object-fit: cover;
 }
 
 .platillo h2 {
@@ -526,8 +539,16 @@ video{
     border: none;
     background-color: #881014;
     color: var(--blanco);
-   height: 4.8rem;
-   width: 6.8rem;
+    height: 4.8rem;
+    width: 6.8rem;
+    transition: color .3s ease;
+    transition: background-color .3s ease;
+}
+
+.precio button:hover {
+    background-color: #e1e1e1;
+    cursor: pointer;
+    color: #000;
 }
 
 .separador{
@@ -897,6 +918,7 @@ body.dark .container-cart-products{
 .info-cart-product{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     flex: 0.8; /*Para que ocupe más espacio*/
 }
 
