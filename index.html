@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Restaurant</title>
+    <title>Restaurant hojarasca</title>
     <script
       src="https://kit.fontawesome.com/c49d8236c4.js"
       crossorigin="anonymous"
@@ -17,7 +17,7 @@
     />
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="icon" type="image/png" href="assets/favicon.webp">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
   </head>
   <body>
     <div id="loader">
@@ -86,7 +86,7 @@
         </div>
       </div>
     </div>
-    <section class="menu contenedor" id="menu">
+    <section class="menu contenedor" id="menu section">
       <h2 class="texto-platillos">Platillos populares</h2>
       <div class="container-icon">
         <div class="container-cart-icon">
@@ -109,9 +109,6 @@
             <span id="contador-productos">0</span>
           </div>
         </div>
-        
-          
-        
         <div class="container-cart-products hidden-cart ">
           <div class="row-product hidden">
             <div class="cart-product">
@@ -140,12 +137,20 @@
             </div>
           </div>
           <div class="cart-total hidden">
+            <div class="total">
             <h3>Total:</h3>
             <span class="total-pagar">0</span>
+          </div>
+          <div class="precio">
+            <button id="openModalBtn total-pagar" >
+              pagar
+          </button>
+          </div>
           </div>
           <p class="cart-empty">El carrito está vacío</p>
         </div>
       </div>
+    
       <div class="botones-platillos">
         <button class="Todos btn btn-verde">Todos</button>
         <button class="ensaladas btn btn-verde">ensaladas</button>
@@ -168,7 +173,7 @@
         </div>
         <div class="platillo" data-platillo="ensalada">
           <img data-src="assets/ensalada2.webp" alt="ensalada" />
-          <h2>Quinoa2</h2>
+          <h2>Ensalada 2</h2>
           <p>Quinoa, cerezas, tomate, aceitunas, cereal</p>
           <div class="precio">
             <p class="price">$40</p>
@@ -179,7 +184,7 @@
         </div>
         <div class="platillo" data-platillo="ensalada">
           <img data-src="assets/ensalada.webp" alt="ensalada" />
-          <h2>Quinoa3</h2>
+          <h2>Ensalada 3</h2>
           <p>Quinoa, cerezas, tomate, aceitunas, cereal</p>
           <div class="precio">
             <p class="price">$40</p>
@@ -190,7 +195,7 @@
         </div>
         <div class="platillo" data-platillo="pasta">
           <img data-src="assets/pasta1.webp" alt="pasta" />
-          <h2>Quinoa</h2>
+          <h2>Pasta</h2>
           <p>Quinoa, cerezas, tomate, aceitunas, cereal</p>
           <div class="precio">
             <p class="price">$40</p>
@@ -201,7 +206,7 @@
         </div>
         <div class="platillo" data-platillo="pasta">
           <img data-src="assets/pasta2.webp" alt="pasta" />
-          <h2>pasta</h2>
+          <h2>Pasta 2</h2>
           <p>Quinoa, cerezas, tomate, aceitunas, cereal</p>
           <div class="precio">
             <p class="price">$40</p>
@@ -212,7 +217,7 @@
         </div>
         <div class="platillo" data-platillo="pasta">
           <img data-src="assets/pasta1.webp" alt="pasta" />
-          <h2>Quinoa</h2>
+          <h2>Pasta 3</h2>
           <p>Quinoa, cerezas, tomate, aceitunas, cereal</p>
           <div class="precio">
             <p class="price">$40</p>
@@ -234,7 +239,7 @@
         </div>
         <div class="platillo" data-platillo="pizza">
           <img data-src="assets/pizza2.webp" alt="pizza" />
-          <h2>Quinoa</h2>
+          <h2>Pizza 2</h2>
           <p>Quinoa, cerezas, tomate, aceitunas, cereal</p>
           <div class="precio">
             <p class="price">$40</p>
@@ -245,7 +250,7 @@
         </div>
         <div class="platillo" data-platillo="pizza">
           <img data-src="assets/pizza1.webp" alt="pizza" />
-          <h2>Quinoa</h2>
+          <h2>Pizza 3</h2>
           <p>Quinoa, cerezas, tomate, aceitunas, cereal</p>
           <div class="precio">
             <p class="price">$40</p>
@@ -256,7 +261,7 @@
         </div>
         <div class="platillo" data-platillo="postre">
           <img data-src="assets/postres1.webp" alt="postre" />
-          <h2>Quinoa</h2>
+          <h2>Postre</h2>
           <p>Quinoa, cerezas, tomate, aceitunas, cereal</p>
           <div class="precio">
             <p class="price">$40</p>
@@ -267,7 +272,7 @@
         </div>
         <div class="platillo" data-platillo="postre">
           <img data-src="assets/postres2.webp" alt="postre" />
-          <h2>Quinoa</h2>
+          <h2>Postre 2</h2>
           <p>Quinoa, cerezas, tomate, aceitunas, cereal</p>
           <div class="precio">
             <p class="price">$40</p>
@@ -278,7 +283,7 @@
         </div>
         <div class="platillo" data-platillo="postre">
           <img data-src="assets/postres1.webp" alt="postre" />
-          <h2>Quinoa</h2>
+          <h2>postre 3</h2>
           <p>Quinoa, cerezas, tomate, aceitunas, cereal</p>
           <div class="precio">
             <p class="price">$40</p>
@@ -297,7 +302,7 @@
         <a href="#" class="btn btn-verde">Ordenar ahora</a>
       </div>
     </div>
-    <section class="chef contenedor" id="chef">
+    <section class="chef contenedor" id="chef section">
       <h2>Chef Ejecutivo</h2>
       <div class="contenido-chef">
         <div class="texto-chef">

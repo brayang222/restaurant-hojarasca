@@ -7,7 +7,7 @@ function loadnow(opacity) {
     loader.style.opacity = opacity;
     window.setTimeout(function () {
       loadnow(opacity - 0.10)
-    }, 100)
+    }, 30)
   }
 }
 function displaycontent() {
@@ -73,7 +73,6 @@ const observer = new IntersectionObserver((entries, observer) => {
 
 
 img.forEach(imagen => {
-
   observer.observe(imagen);
 });
 
@@ -156,12 +155,8 @@ const productsList = document.querySelector('.platillos');
 
 // Variable de arreglos de producto
 let allProducts = [];
-
-const valorTotal = document.querySelector('.total-pagar')
-
-const countProducts = document.querySelector('#contador-productos')
-
-
+const valorTotal = document.querySelector('.total-pagar');
+const countProducts = document.querySelector('#contador-productos');
 
 const cartEmpty = document.querySelector('.cart-empty');
 const cartTotal = document.querySelector('.cart-total');
@@ -183,8 +178,6 @@ productsList.addEventListener('click', e => {
       const products = allProducts.map(product => {
         if (product.title === infoProduct.title) {
           product.quantity++;
-
-
           return product;
         }
         else {
@@ -194,7 +187,6 @@ productsList.addEventListener('click', e => {
       allProducts = [...products];
 
     } else {
-
       allProducts = [...allProducts, infoProduct];
     }
 
@@ -268,6 +260,57 @@ const showHTML = () => {
   countProducts.innerText = totalOfProduct;
   valorTotal.innerText = `$${total}`;
 };
+/*
+const totalPagar = document.querySelector('#total-pagar');
+
+function metodoPago() {
+  
+}
+totalPagar.addEventListener('click', metodoPago);*/
+
+
+// ---------------------- MODAL --------------------------
+// Referencias a elementos del modal
+const modal = document.getElementById("modal");
+const closeModalButton = document.getElementById("closeModalBtn");
+const modalProducts = document.getElementById("modalProducts");
+const modalTotal = document.getElementById("modalTotal");
+const openModalButton = document.getElementById("openModalBtn");
+
+// Evento para abrir el modal
+document.addEventListener("click", (event) => {
+  // Verifica si el botón "Pagar" fue clickeado
+  if (event.target.matches("#openModalBtn")) {
+    modal.style.display = "block"; // Mostrar modal
+    mostrarProductosModal(); // Llenar el modal con los productos y el total
+  } 
+  else if (event.target.matches("#closeModalBtn")) {
+    modal.style.display = "none"; // Ocultar modal
+  } 
+});
+
+
+
+// Función para mostrar productos y total en el modal
+const mostrarProductosModal = () => {
+  modalProducts.innerHTML = ""; // Limpiar contenido previo
+  console.log("mostrarProductosModal se llamó")
+  // Recorrer la lista de productos y mostrarlos en el modal
+  allProducts.forEach(product => {
+    const productDiv = document.createElement("div");
+    productDiv.textContent = `${product.quantity} x ${product.title}`;
+    modalProducts.appendChild(productDiv);
+  });
+
+  // Calcular y mostrar el total en el modal
+  const total = allProducts.reduce(
+    (accumulator, product) =>
+      accumulator + parseInt(product.price.slice(1)) * product.quantity,
+    0
+  );
+  modalTotal.textContent = `$${total}`;
+};
+
 
 // DARK MODE ***************************************
 
