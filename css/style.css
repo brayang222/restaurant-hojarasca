@@ -4,13 +4,10 @@
     height: 100vh;
     z-index: 500;     
     overflow: visible;
-    background: #000 url(/assets/2.png) center no-repeat; 
+    background: #000 url(../assets/loader.webp) center no-repeat cover; 
     background-size:cover ;
+    object-fit: cover;
 }
-
-
-
-
 
 :root{
     --azul:#000D71;
