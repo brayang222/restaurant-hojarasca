@@ -9,7 +9,7 @@
 </head>
 <body style="background-color: #111821;">
  
-    <div class="container" style="max-width: 500px;
+    <div class="container" style="max-width: 500px; 
     margin: 20px auto;
     padding: 20px;
     background-color: #ababab;
