@@ -13,7 +13,7 @@ $Empleado = $_POST['Empleado'];
 $query ="INSERT INTO 
         pedido(idPedido,Mesa,FechaPedido,TiempoEstimado,Total,Estado,Mesero,Cliente)
         VALUES('$Id','$Mesa','$FechaPedido','$TiempoEstimado','$Total','$Estado','$Empleado','$Cliente')";
-$Consulta=mysqli_query($conn,$query);
+$Consulta=mysqli_query($conn, $query);
 
 if ($Consulta) {
     echo "Se inserto la empresa a la bd a la tabla correspondiente" . "<br>";

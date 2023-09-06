@@ -146,8 +146,7 @@ $Consulta2 = mysqli_query($conn, $query2)
                       </div>
                       <div class="mb-3">
                         <label class="form-label">Cliente</label>
-                        <select class="custom-select" style="height: 30px;" name="Cliente">
-                          <option>
+                        <select class="custom-select" style="height: 30px;" name="Cliente" value="<?php echo $vec[6] ?>">
                             <?php
                             while ($v = mysqli_fetch_array($Consulta)) {
                               echo "<option value = " . $v[0] . ">" . $v[1] .
@@ -155,13 +154,13 @@ $Consulta2 = mysqli_query($conn, $query2)
                             } ?>
                         </select>
                       </div>
+
                       <div class="mb-3">
                         <label class="form-label">Empleado</label>
-                        <select class="custom-select" style="height: 30px;" name="Empleado">
-                          <option>
+                        <select class="custom-select" style="height: 30px;" name="Empleado" value="<?php echo $vec[7] ?>">
                             <?php
                             while ($v = mysqli_fetch_array($Consulta2)) {
-                              echo "<option value = " . $v[0] . ">" . $v[1] . "-" . $v[2] .
+                              echo "<option value = " . $v[0] . ">" . $v[1] . " - " . $v[2] .
                                 "</option>";
                             } ?>
                         </select>
