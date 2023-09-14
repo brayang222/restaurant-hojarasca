@@ -9,9 +9,9 @@ if(isset($_POST["btn"])) {
   if(mysqli_num_rows($c)==1){
     $v=mysqli_fetch_array($c);
     session_start();
-    $_SESSION["Correo"]=$v[0];
-    $_SESSION["Clave"]=$v[1];
-    $_SESSION["Rol"]=$v[2];
+    $_SESSION["Correo"]=$v[1];
+    $_SESSION["Clave"]=$v[2];
+    $_SESSION["Rol"]=$v[6];
 
     if($v["Rol"]==1) {
       echo "<script>alert('Bienvenido administrador');
