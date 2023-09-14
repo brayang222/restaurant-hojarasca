@@ -9,8 +9,8 @@ if(isset($_POST["btn"])) {
   if(mysqli_num_rows($c)==1){
     $v=mysqli_fetch_array($c);
     session_start();
-    $_SESSION["CedulaEmpleado"]=$v[0];
-    $_SESSION["Nombre"]=$v[1];
+    $_SESSION["Correo"]=$v[0];
+    $_SESSION["Clave"]=$v[1];
     $_SESSION["Rol"]=$v[2];
 
     if($v["Rol"]==1) {
