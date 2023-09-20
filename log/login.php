@@ -4,7 +4,7 @@ if(isset($_POST["btn"])) {
   $clave = $_POST["clave"];
   include 'conexion.php';
   $q="SELECT * FROM usuarios
-      WHERE Documento=$doc and Clave='$clave'";
+      WHERE Correo=$doc and Clave='$clave'";
   $c=mysqli_query($conn, $q);
   if(mysqli_num_rows($c)==1){
     $v=mysqli_fetch_array($c);
