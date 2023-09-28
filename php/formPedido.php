@@ -19,6 +19,7 @@ $Consulta2 = mysqli_query($conn, $query2)
 </head>
 
 <body style="background-color: #111821;">
+<?php  include "navbar.php" ?>
 
     <div class="container" style="max-width: 500px;
     margin: 20px auto;

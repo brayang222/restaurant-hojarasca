@@ -21,7 +21,8 @@ $Consulta2 = mysqli_query($conn, $query2)
 </head>
 
 <body style="background-color: #111821; text-align: center; color: white">
-  <h1 style="margin: 40px auto">Mostrar producto</h1>
+  <?php  include "navbar.php" ?>
+  <h1 style="margin: 70px auto">Mostrar producto</h1>
   <form class="d-flex container" role="search">
     <input name="Buscar" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
     <button name="btns" class="btn btn-outline-success" type="submit"
