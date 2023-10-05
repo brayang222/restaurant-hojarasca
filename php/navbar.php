@@ -9,16 +9,19 @@ if (!isset($_SESSION["Correo"])) {
    
     <nav class="navbar navbar-dark bg-dark fixed-top mb-3 ">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Offcanvas dark navbar</a>
+    <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5>
+        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Lista de navegacion</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
-      <div class="offcanvas-body" style="color: white">
+      <div class="offcanvas-body d-flex" 
+      style="color: white; font-size: 22px; flex-direction: column; gap: 20px"
+      >
+      <a href="../index.html" class="nav-link">Pagina principal</a>
         <a href="formPedido.php" class="nav-link">Pedidos</a>
         <a href="formEmpleado.php" class="nav-link">Empleados</a>
         <a href="formCliente.php" class="nav-link">Clientes</a>

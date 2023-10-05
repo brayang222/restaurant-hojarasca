@@ -48,7 +48,7 @@
 
           </div>
           <div class="salir">
-            <a href="log/index.html">
+            <a href="../log/logout.php">
               <i class="fa-solid fa-right-from-bracket"></i>
             </a>
 
@@ -63,7 +63,7 @@
       <div class="contenedor-encabezado">
         <div class="texto-encabezado">
           <h2>Bienvenido!</h2>
-          <a href="#menu" class="btn bordes">Nuestro menú</a>
+          <a href="compra.html" class="btn bordes">Nuestro menú</a>
         </div>
         <video autoplay loop muted>
           <source src="assets/bg_video.mp4" />
@@ -96,198 +96,12 @@
       </div>
     </div>
   </div>
-  <section class="menu contenedor" id="menu section">
-    <h2 class="texto-platillos">Platillos populares</h2>
-    <div class="container-icon">
-      <div class="container-cart-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-          class="icon-cart">
-          <path stroke-linecap="round" stroke-linejoin="round"
-            d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-        </svg>
-
-        <div class="count-products">
-          <span id="contador-productos">0</span>
-        </div>
-      </div>
-      <div class="container-cart-products hidden-cart ">
-        <div class="row-product hidden">
-          <div class="cart-product">
-            <div class="info-cart-product">
-              <span class="cantidad-producto-carrito"></span>
-              <p class="titulo-producto-carrito">Añade un producto</p>
-              <span class="precio-producto-carrito" id="precio-product"></span>
-            </div>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-              stroke="currentColor" class="icon-close">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </div>
-        </div>
-        <div class="cart-total hidden">
-          <div class="total">
-            <h3>Total:</h3>
-            <span class="total-pagar">0</span>
-          </div>
-          <div class="precio">
-            <button id="openModalBtn total-pagar">
-              pagar
-            </button>
-          </div>
-        </div>
-        <p class="cart-empty">El carrito está vacío</p>
-      </div>
-    </div>
-
-    <div class="botones-platillos">
-      <button class="Todos btn btn-verde">Todos</button>
-      <button class="ensaladas btn btn-verde">ensaladas</button>
-      <button class="pasta btn btn-verde">pasta</button>
-      <button class="pizza btn btn-verde">pizza</button>
-      <button class="postres btn btn-verde">postres</button>
-    </div>
-
-    <div class="platillos">
-      <div class="platillo" data-platillo="ensalada">
-        <img data-src="assets/ensalada.webp" alt="ensalada" />
-        <h2>Ensalada</h2>
-        <p>Quinoa, cerezas, tomate, aceitunas, cereal</p>
-        <div class="precio">
-          <p class="price">$40</p>
-          <button class="btn-add-cart">
-            Añadir
-          </button>
-        </div>
-      </div>
-      <div class="platillo" data-platillo="ensalada">
-        <img data-src="assets/ensalada2.webp" alt="ensalada" />
-        <h2>Ensalada 2</h2>
-        <p>Quinoa, cerezas, tomate, aceitunas, cereal</p>
-        <div class="precio">
-          <p class="price">$40</p>
-          <button class="btn-add-cart">
-            Añadir
-          </button>
-        </div>
-      </div>
-      <div class="platillo" data-platillo="ensalada">
-        <img data-src="assets/ensalada.webp" alt="ensalada" />
-        <h2>Ensalada 3</h2>
-        <p>Quinoa, cerezas, tomate, aceitunas, cereal</p>
-        <div class="precio">
-          <p class="price">$40</p>
-          <button class="btn-add-cart">
-            Añadir
-          </button>
-        </div>
-      </div>
-      <div class="platillo" data-platillo="pasta">
-        <img data-src="assets/pasta1.webp" alt="pasta" />
-        <h2>Pasta</h2>
-        <p>Quinoa, cerezas, tomate, aceitunas, cereal</p>
-        <div class="precio">
-          <p class="price">$40</p>
-          <button class="btn-add-cart">
-            Añadir
-          </button>
-        </div>
-      </div>
-      <div class="platillo" data-platillo="pasta">
-        <img data-src="assets/pasta2.webp" alt="pasta" />
-        <h2>Pasta 2</h2>
-        <p>Quinoa, cerezas, tomate, aceitunas, cereal</p>
-        <div class="precio">
-          <p class="price">$40</p>
-          <button class="btn-add-cart">
-            Añadir
-          </button>
-        </div>
-      </div>
-      <div class="platillo" data-platillo="pasta">
-        <img data-src="assets/pasta1.webp" alt="pasta" />
-        <h2>Pasta 3</h2>
-        <p>Quinoa, cerezas, tomate, aceitunas, cereal</p>
-        <div class="precio">
-          <p class="price">$40</p>
-          <button class="btn-add-cart">
-            Añadir
-          </button>
-        </div>
-      </div>
-      <div class="platillo" data-platillo="pizza">
-        <img data-src="assets/pizza1.webp" alt="pizza" />
-        <h2>Pizza</h2>
-        <p>Quinoa, cerezas, tomate, aceitunas, cereal</p>
-        <div class="precio">
-          <p class="price">$40</p>
-          <button class="btn-add-cart">
-            Añadir
-          </button>
-        </div>
-      </div>
-      <div class="platillo" data-platillo="pizza">
-        <img data-src="assets/pizza2.webp" alt="pizza" />
-        <h2>Pizza 2</h2>
-        <p>Quinoa, cerezas, tomate, aceitunas, cereal</p>
-        <div class="precio">
-          <p class="price">$40</p>
-          <button class="btn-add-cart">
-            Añadir
-          </button>
-        </div>
-      </div>
-      <div class="platillo" data-platillo="pizza">
-        <img data-src="assets/pizza1.webp" alt="pizza" />
-        <h2>Pizza 3</h2>
-        <p>Quinoa, cerezas, tomate, aceitunas, cereal</p>
-        <div class="precio">
-          <p class="price">$40</p>
-          <button class="btn-add-cart">
-            Añadir
-          </button>
-        </div>
-      </div>
-      <div class="platillo" data-platillo="postre">
-        <img data-src="assets/postres1.webp" alt="postre" />
-        <h2>Postre</h2>
-        <p>Quinoa, cerezas, tomate, aceitunas, cereal</p>
-        <div class="precio">
-          <p class="price">$40</p>
-          <button class="btn-add-cart">
-            Añadir
-          </button>
-        </div>
-      </div>
-      <div class="platillo" data-platillo="postre">
-        <img data-src="assets/postres2.webp" alt="postre" />
-        <h2>Postre 2</h2>
-        <p>Quinoa, cerezas, tomate, aceitunas, cereal</p>
-        <div class="precio">
-          <p class="price">$40</p>
-          <button class="btn-add-cart">
-            Añadir
-          </button>
-        </div>
-      </div>
-      <div class="platillo" data-platillo="postre">
-        <img data-src="assets/postres1.webp" alt="postre" />
-        <h2>postre 3</h2>
-        <p>Quinoa, cerezas, tomate, aceitunas, cereal</p>
-        <div class="precio">
-          <p class="price">$40</p>
-          <button class="btn-add-cart">
-            Añadir
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <div class="separador">
     <div class="contenido-separador contenedor">
       <h2>Comida Colombiana para cualquier hora del día</h2>
       <p>Empieza tú día comiendo deliciosa comida o un café Colombiano</p>
-      <a href="#" class="btn btn-verde">Ordenar ahora</a>
+      <a href="compra.html" class="btn btn-verde">Ordenar ahora</a>
     </div>
   </div>
   <section class="chef contenedor" id="chef section">
