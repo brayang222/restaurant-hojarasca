@@ -7,7 +7,7 @@ if (!isset($_SESSION["Correo"])) {
   if ($Rol == 1) {
     ?>
    
-    <nav class="navbar navbar-dark bg-dark fixed-top mb-3 ">
+    <nav class="navbar navbar-dark bg-dark fixed-top mb-3 " style="margin-bottom: 50px">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
@@ -25,6 +25,7 @@ if (!isset($_SESSION["Correo"])) {
         <a href="formPedido.php" class="nav-link">Pedidos</a>
         <a href="formEmpleado.php" class="nav-link">Empleados</a>
         <a href="formCliente.php" class="nav-link">Clientes</a>
+        <a href="formProducto.php" class="nav-link">Productos</a>
         <a href="mostrarP.php" class="nav-link">mostrarP</a>
       </div>
     </div>

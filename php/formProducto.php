@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario empresa</title>
+    <title>Formulario producto</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
@@ -20,27 +20,43 @@
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(255, 255, 255, 1.2);">
         <h3 class="card-title" style="text-align: center;padding: 20px; font-family: serif; font-weight: bold;">
-            Formulario Empleado</h3>
-        <form action="regEmpleado.php" method="post">
+            Formulario Producto</h3>
+        <form action="regProducto.php" method="post" enctype="multipart/form-data">
             <div class="mb-3">
-                <label class="form-label">Cédula empleado</label>
-                <input type="number" class="form-control" aria-describedby="cedulaHelp" name="CedulaEmpleado" required>
+                <label class="form-label">identificador del platillo</label>
+                <input type="number" class="form-control" aria-describedby="cedulaHelp" name="idPlatillo" required>
             </div>
             <div class="mb-3">
                 <label class="form-label">Nombre</label>
                 <input type="text" class="form-control" name="Nombre" id="">
             </div>
             <div class="mb-3">
-                <label class="form-label">Rol</label>
-                <input type="text" class="form-control" name="Rol" id="">
+                <label class="form-label">Fecha de creacion</label>
+                <input type="date" class="form-control" name="fechaCreacion" id="">
             </div>
             <div class="mb-3">
-                <label class="form-label">Chef</label>
-                <input type="number" class="form-control" name="Chef" id="">
+                <label class="form-label">Ingredientes</label>
+                <input type="text" class="form-control" name="Ingredientes" id="">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Imagen</label>
+                <input type="file" class="form-control" name="Imagen" id="" accept='image/*'>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Descripcion</label>
+                <input type="text" class="form-control" name="Descripcion" id="">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Precio</label>
+                <input type="number" class="form-control" name="Precio" id="">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Descuento</label>
+                <input type="number" class="form-control" name="Descuento" id="">
             </div>
 
 
-            <input type="submit" class="btn btn-primary" value="Enviar" style="background-color: #354a78;
+            <input name="btn" type="submit" class="btn btn-primary" value="Enviar" style="background-color: #354a78;
     color: white;
     margin-top: 20px;
     padding: 10px;

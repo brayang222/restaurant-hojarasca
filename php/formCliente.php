@@ -14,7 +14,7 @@
     <?php include "navbar.php" ?>
 
     <div class="container" style="max-width: 500px; 
-    margin: 20px auto;
+    margin: 100px auto;
     padding: 20px;
     background-color: #ababab;
     border-radius: 10px;
