@@ -47,7 +47,7 @@
             <span class="total-pagar">0</span>
           </div>
           <div class="precio">
-            <button id="openModalBtn total-pagar">
+            <button id="openModalBtn total-pagar" name="btn" >
               pagar
             </button>
           </div>
