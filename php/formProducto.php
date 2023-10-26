@@ -23,12 +23,12 @@
             Formulario Producto</h3>
         <form action="regProducto.php" method="post" enctype="multipart/form-data">
             <div class="mb-3">
-                <label class="form-label">identificador del platillo</label>
-                <input type="number" class="form-control" aria-describedby="cedulaHelp" name="idPlatillo" required>
-            </div>
-            <div class="mb-3">
                 <label class="form-label">Nombre</label>
                 <input type="text" class="form-control" name="Nombre" id="">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Tipo</label>
+                <input type="text" class="form-control" name="Tipo" id="">
             </div>
             <div class="mb-3">
                 <label class="form-label">Fecha de creacion</label>

@@ -524,13 +524,29 @@ video{
     margin: 30px 0;
 }
 
+.platillo :nth-child(4){
+    bottom: 0;
+}
+
+.platillo .imagen-platillo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .platillo img{
+    min-width: 347px;
     min-height: 260px;
+    max-height: 260px;
     object-fit: cover;
 }
 
 .platillo h2 {
     text-align: center;
+}
+
+.platillo .parrafo-platillo{
+    height: 150px;
 }
 
 .platillo p{
@@ -540,6 +556,7 @@ video{
 .precio{
     display: flex;
     justify-content: space-between;
+    bottom: 0;
 }
 
 .price {

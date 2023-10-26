@@ -1,7 +1,7 @@
 <?php
 if(isset($_POST['btn'])) {
   include 'conexion.php';
-  $idPlatillo = $_POST['idPlatillo'];
+  $tipo = $_POST['Tipo'];
   $Nombre = $_POST['Nombre'];
   $FechaCreacion = $_POST['fechaCreacion'];
   $Ingredientes = $_POST['Ingredientes'];
@@ -13,8 +13,8 @@ if(isset($_POST['btn'])) {
   move_uploaded_file($nombreImg, $ruta); //manda la img a la carpeta
   
   $consulta ="INSERT INTO 
-          producto(idPlatillo,Nombre,fechaCreacion,Imagen, Ingredientes,Descripcion,Precio,Descuento)
-          VALUES('$idPlatillo','$Nombre','$FechaCreacion','$ruta','$Ingredientes','$Descripcion','$Precio','$Descuento')";
+          producto(Tipo,Nombre,fechaCreacion,Imagen, Ingredientes,Descripcion,Precio,Descuento)
+          VALUES('$tipo','$Nombre','$FechaCreacion','$ruta','$Ingredientes','$Descripcion','$Precio','$Descuento')";
   $query=mysqli_query($conn,$consulta);
   
   if ($query) {
