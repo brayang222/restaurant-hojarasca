@@ -17,7 +17,8 @@
 <body>
   <main>
     <div class="volverMenu">
-      <a href="index.php" class="btn btn-verde">Volver al menú</a>
+      
+      <a href="index.php" class="btn"><i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i> </a>
     </div>
     <section class="menu contenedor" id="menu section">
       <h2 class="texto-platillos">Platillos populares</h2>
