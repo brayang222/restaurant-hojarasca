@@ -188,6 +188,7 @@ img{
     background-color: var(--negro);
     position: relative;
     z-index: 5;
+    
 }
 
 .cont-nav-aside{
@@ -470,6 +471,13 @@ video{
 .imagen2{
     margin-bottom: 1rem;
 
+}
+
+main>.volverMenu>a {
+    position: sticky;
+top:80px;
+border:10px solid #1B75CE;
+display:inline-block;
 }
 
 .menu{

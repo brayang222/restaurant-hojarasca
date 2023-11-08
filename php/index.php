@@ -11,62 +11,27 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@700&family=Mulish:wght@400;700&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="css/normalize.css" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="../css/normalize.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
 </head>
 
 <body>
   <div id="loader"></div>
 
   <header class="encabezado" id="content">
-    <div class="navegacion">
-      <div class="cont-nav container-icon">
-        <div class="logo">
-          <h2>
-            Restautant <span class="amarillo">Hoja</span><span class="azul">ras</span><span class="rojo">ca</span>
-          </h2>
-        </div>
-
-        <nav class="nav ocultar" id="inicio">
-          <a href="#inicio">Inicio</a>
-          <a href="#sobrenosotros">Sobre nosotros</a>
-          <a href="#menu">Menú</a>
-          <a href="#chef">Chef</a>
-          <a href="#contacto">Contacto</a>
-          <div class="aling"><button class="switch " id="switch">
-              <span><i class="fa-solid fa-sun"></i></span>
-              <span><i class="fa-solid fa-moon"></i></span>
-            </button></div>
-
-        </nav>
-        <div class="cont-nav-aside">
-          <div class="ingresar">
-            <a href="log/index.html">
-              <i class="fa-regular fa-user"></i>
-            </a>
-
-          </div>
-          <div class="salir">
-            <a href="../log/logout.php">
-              <i class="fa-solid fa-right-from-bracket"></i>
-            </a>
-
-          </div>
-          <div class="hamburguesa"><span></span><span></span><span></span></div>
-
-        </div>
-
-      </div>
-    </div>
+    <?php
+      include 'navbar.php';
+    ?>
+    
     <div class="contenido-header">
       <div class="contenedor-encabezado">
         <div class="texto-encabezado">
           <h2>Bienvenido!</h2>
-          <a href="compra.html" class="btn bordes">Nuestro menú</a>
+          <a href="compraDinamica.php" class="btn bordes">Nuestro menú</a>
         </div>
         <video autoplay loop muted>
-          <source src="assets/bg_video.mp4" />
+          <source src="../assets/bg_video.mp4" />
         </video>
       </div>
     </div>
@@ -88,11 +53,11 @@
     </div>
     <div class="img-nosotros">
       <div class="imagen1">
-        <img data-src="assets/nosotros1.webp" alt="mujer comiendo pizza" />
+        <img src="../assets/nosotros1.webp" alt="mujer comiendo pizza" />
       </div>
       <div class="imagen2">
-        <img data-src="assets/nosotros2.webp" alt="mujeres comiendo" />
-        <img data-src="assets/nosotros3.webp" alt="pasta" />
+        <img src="../assets/nosotros2.webp" alt="mujeres comiendo" />
+        <img src="../assets/nosotros3.webp" alt="pasta" />
       </div>
     </div>
   </div>
@@ -101,7 +66,7 @@
     <div class="contenido-separador contenedor">
       <h2>Comida Colombiana para cualquier hora del día</h2>
       <p>Empieza tú día comiendo deliciosa comida o un café Colombiano</p>
-      <a href="compra.html" class="btn btn-verde">Ordenar ahora</a>
+      <a href="../compra.html" class="btn btn-verde">Ordenar ahora</a>
     </div>
   </div>
   <section class="chef contenedor" id="chef section">
@@ -122,7 +87,7 @@
         <a href="#" class="btn btn-verde">Leer Biografía</a>
       </div>
       <div class="imagen-chef">
-        <img data-src="assets/chef.webp" alt="foto chef" />
+        <img src="../assets/chef.webp" alt="foto chef" />
       </div>
     </div>
   </section>
@@ -201,7 +166,7 @@
       desarollado por Brayan Gómez
     </p>
   </footer>
-  <script src="js/main.js">
+  <script src="../js/main.js">
 
   </script>
 

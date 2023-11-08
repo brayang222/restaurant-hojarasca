@@ -27,7 +27,7 @@ if(isset($_POST["btn"])) {
           window.location.href='../php/mostrarP.php';</script>";
     } else if($v["Rol"]== 4) {
       echo "<script>alert('Bienvenido usuario');
-          window.location.href='../compra.html';</script>";
+          window.location.href='../php/compraDinamica.php';</script>";
     }
   } else {
     echo "<script>alert('usuario o contraseña incorrectos');</script>";
