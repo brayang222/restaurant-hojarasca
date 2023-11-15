@@ -31,14 +31,25 @@ if (!isset($_SESSION["Correo"])) {
             </button>
           </div>
         </nav>
+        
         <div class="cont-nav-aside">
-          <div class="ingresar">
-            <a href="../log/index.html">
+          <div class="popup-container">
+            <div class="ingresar">
               <i class="fa-regular fa-user"></i>
-            </a>
+            </div>
 
+          <div class="popup-content">
+          <?php
+            include "conexion.php";
+            $q = mysqli_query($conn, "SELECT * FROM usuarios");
+            while ($a = mysqli_fetch_array($q)) { ?>
+                <p>Nombre: <?php echo $a[4] ?></p>
+                <p>Correo: <?php echo $a[1] ?></p>
+          <?php } ?>
+            
           </div>
-          <div class="salir">
+        </div>
+          <div class="salir" id="logout-icon">
             <a href="../log/logout.php">
               <i class="fa-solid fa-right-from-bracket"></i>
             </a>
@@ -81,13 +92,23 @@ if (!isset($_SESSION["Correo"])) {
 
         </nav>
         <div class="cont-nav-aside">
-          <div class="ingresar">
-            <a href="../log/index.html">
+          <div class="popup-container">
+            <div class="ingresar">
               <i class="fa-regular fa-user"></i>
-            </a>
+            </div>
 
+          <div class="popup-content">
+          <?php
+            include "conexion.php";
+            $q = mysqli_query($conn, "SELECT * FROM usuarios");
+            while ($a = mysqli_fetch_array($q)) { ?>
+                <p>Nombre: <?php echo $a[4] ?></p>
+                <p>Correo: <?php echo $a[1] ?></p>
+          <?php } ?>
+            
           </div>
-          <div class="salir">
+        </div>
+          <div class="salir" id="logout-icon">
             <a href="../log/logout.php">
               <i class="fa-solid fa-right-from-bracket"></i>
             </a>

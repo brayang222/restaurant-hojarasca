@@ -19,6 +19,20 @@ document.addEventListener("DOMContentLoaded", function () {
   loadnow(3);
 })
 
+// LOGOUT
+
+function mostrarPopup() {
+  document.getElementById('popup').style.display = 'block';
+}
+
+function cerrarPopup() {
+  document.getElementById('popup').style.display = 'none';
+}
+
+document.getElementById('logout-icon').addEventListener('click', function(event) {
+  event.preventDefault();
+  window.location.href = '../log/logout.php';
+});
 // ******************************************************************
 
 const menu = document.querySelector(".hamburguesa");

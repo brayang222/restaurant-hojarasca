@@ -121,6 +121,36 @@ img{
     }
 }
 
+.popup-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .popup-content {
+    display: none;
+    position: absolute;
+    background-color: #413f3f;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    top: 30px; /* Ajusta la distancia desde el icono */
+    left: 0;
+    z-index: 1;
+  }
+
+  .popup-container:hover .popup-content {
+    display: block;
+  }
+
+  .popup-content p {
+    margin: 0;
+  }
+
+  .fa-user::before{
+    font-size: 33px;
+    color: white;
+  }
+
 .btn-cerrar:hover {
     cursor: pointer;
 
