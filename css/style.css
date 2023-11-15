@@ -226,6 +226,10 @@ img{
     font-size: 3rem;
 }
 
+.nav {
+    overflow-y: auto;
+}
+
 .nav a {
     text-decoration: none;
     /*Para quitarle las líneas a los enlaces*/
