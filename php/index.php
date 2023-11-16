@@ -162,7 +162,7 @@
   </div>
   <footer class="footer">
     <p>
-      Todos los derechos reservados &copy; 2022 Restaurant Hojarasca,
+      Todos los derechos reservados &copy; 2023 Restaurant Hojarasca,
       desarollado por Brayan Gómez
     </p>
   </footer>

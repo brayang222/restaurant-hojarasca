@@ -41,12 +41,28 @@ if (!isset($_SESSION["Correo"])) {
           <div class="popup-content">
           <?php
             include "conexion.php";
-            $q = mysqli_query($conn, "SELECT * FROM usuarios");
-            while ($a = mysqli_fetch_array($q)) { ?>
-                <p>Nombre: <?php echo $a[4] ?></p>
-                <p>Correo: <?php echo $a[1] ?></p>
-          <?php } ?>
-            
+
+            if (isset($_SESSION["Correo"])) {
+                $correoUsuario = $_SESSION["Correo"];
+                
+                $q = mysqli_query($conn, "SELECT * FROM usuarios WHERE Correo = '$correoUsuario'");
+                
+                while ($a = mysqli_fetch_array($q)) { ?>
+                    <p>Nombre: <?php echo $a[4] ?></p>
+                    <p>Correo: <?php echo $a[1] ?></p>
+
+                    <?php if (!empty($a['../assets/pizza1.webp'])): ?>
+                  <img src="<?php echo $a['../assets/pizza1.webp']; ?>" alt="Imagen del usuario">
+                  <?php endif; ?>
+
+
+                <?php }
+            } else {
+                echo "No hay usuario logueado";
+            }
+          ?>
+
+
           </div>
         </div>
           <div class="salir" id="logout-icon">
@@ -100,11 +116,23 @@ if (!isset($_SESSION["Correo"])) {
           <div class="popup-content">
           <?php
             include "conexion.php";
-            $q = mysqli_query($conn, "SELECT * FROM usuarios");
-            while ($a = mysqli_fetch_array($q)) { ?>
-                <p>Nombre: <?php echo $a[4] ?></p>
-                <p>Correo: <?php echo $a[1] ?></p>
-          <?php } ?>
+
+
+            if (isset($_SESSION["Correo"])) {
+                $correoUsuario = $_SESSION["Correo"];
+                
+                $q = mysqli_query($conn, "SELECT * FROM usuarios WHERE Correo = '$correoUsuario'");
+                
+                while ($a = mysqli_fetch_array($q)) { ?>
+                    <p>Nombre: <?php echo $a[4] ?></p>
+                    <p>Correo: <?php echo $a[1] ?></p>
+
+                    <img src="<?php echo $a[3] ?>" alt="Imagen de perfil" style="max-width: 30px">
+                <?php }
+            } else {
+                echo "No hay usuario logueado";
+            }
+          ?>
             
           </div>
         </div>

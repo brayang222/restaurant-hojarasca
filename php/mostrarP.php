@@ -14,15 +14,17 @@ $Consulta2 = mysqli_query($conn, $query2)
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mostrar producto</title>
+  <title>Mostrar pedidos</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 
 <body style="background-color: #111821; text-align: center; color: white">
-  <?php  include "navbar.php" ?>
-  <h1 style="margin: 70px auto">Mostrar producto</h1>
+    <div class="volverMenu" style="background-color: gray">
+      <a href="index.php" class="btn"><i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i> Volver</a>
+    </div>
+  <h1 style="margin: 70px auto">Mostrar pedidos</h1>
   <form class="d-flex container" role="search">
     <input name="Buscar" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
     <button name="btns" class="btn btn-outline-success" type="submit"
