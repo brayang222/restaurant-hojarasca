@@ -1,7 +1,7 @@
 <?php
 session_start();
+
 if (!isset($_SESSION["Correo"])) {
-  header("Location:../log/login.php");
 } else {
   $Rol = $_SESSION["Rol"];
   if ($Rol == 1) {
