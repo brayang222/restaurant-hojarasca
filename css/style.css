@@ -235,6 +235,13 @@ img{
     margin-bottom: 0.7rem;
 }
 
+@media(max-width:768px){
+    .ingresar, .salir {
+        display: none;
+    }
+
+}
+
 .cont-nav-aside>.salir>a{
     color: white;
     font-size: 36px;
