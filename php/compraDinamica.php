@@ -12,13 +12,14 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="../css/normalize.css" />
   <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
 </head>
 
 <body>
   <main>
     <div class="volverMenu">
       
-      <a href="index.php" class="btn"><i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i> Volver</a>
+      <a href="../index.html" class="btn"><i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i> Volver</a>
     </div>
     <section class="menu contenedor" id="menu section">
       <h2 class="texto-platillos">Platillos populares</h2>
@@ -76,19 +77,19 @@
         include "conexion.php";
         $q = mysqli_query($conn, "SELECT * FROM producto");
         while ($a = mysqli_fetch_array($q)) { ?>
-          <div class="platillo" data-platillo="<?php echo $a[2] ?>">
+          <div class="platillo" data-platillo="<?php echo $a[1] ?>">
             <div class="imagen-platillo">
-              <img data-src="<?php echo $a[5] ?>" alt="<?php echo $a[2] ?>" />
+              <img data-src="<?php echo $a[5] ?>" alt="<?php echo $a[1] ?>" />
             </div>
             <h2>
-              <?php echo $a[1] ?>
+              <?php echo $a[2] ?>
             </h2>
             <p class="parrafo-platillo">
               <?php echo $a[4] ?>
             </p>
             <div class="precio">
               <p class="price">
-                <?php echo "$" . $a[7] ?>
+                <?php echo  $a[7] ?>
               </p>
               <button class="btn-add-cart">
                 Añadir

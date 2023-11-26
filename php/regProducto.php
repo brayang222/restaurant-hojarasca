@@ -16,13 +16,15 @@ if(isset($_POST['btn'])) {
           producto(Tipo,Nombre,fechaCreacion,Imagen, Ingredientes,Descripcion,Precio,Descuento)
           VALUES('$tipo','$Nombre','$FechaCreacion','$ruta','$Ingredientes','$Descripcion','$Precio','$Descuento')";
   $query=mysqli_query($conn,$consulta);
-  
-  if ($query) {
-      echo "Se inserto la empresa a la bd a la tabla correspondiente" . "<br>";
-      echo "<a href='formProducto.php'>Volver</a>";
-  }else {
-      echo "Hay un error en la consulta";
-  }
-}
 
+
+  if ($query) {
+    echo '<script>
+      alert("Se ingresó el producto correctamente a la base de datos");
+      window.location.href = "formProducto.php";
+    </script>';
+} else {
+    echo 'Hay un error en la consulta';
+}
+}
 ?>

@@ -29,6 +29,7 @@ const botonCerrar = () => {
   cerrarMenu(btnCerrar, overlay);
 };
 
+
 const observer = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -42,7 +43,7 @@ const observer = new IntersectionObserver((entries, observer) => {
 
 img.forEach(imagen => {
   observer.observe(imagen);
-});
+}); 
 
 const cerrarMenu = (boton, overlay) => {
   boton.addEventListener("click", () => {
@@ -136,8 +137,7 @@ productsList.addEventListener('click', e => {
     const infoProduct = {
       quantity: 1,
       title: product2.querySelector('h2').textContent,
-      price: product.querySelector('p').textContent,
-
+      price: product.querySelector('p').textContent
     }; //para obtener el contenido del texto
 
     const exits = allProducts.some(product => product.title === infoProduct.title)

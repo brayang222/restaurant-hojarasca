@@ -575,9 +575,8 @@ main .volverMenu a{
         display: flex;
         flex-wrap: wrap;
         /*Para que los elementos estén en varias líneas y crear cuantas querramos*/
-        justify-content: space-between;
+        justify-content: space-evenly;
     }
-
 }
 
 
@@ -622,6 +621,7 @@ main .volverMenu a{
 .precio{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     bottom: 0;
 }
 

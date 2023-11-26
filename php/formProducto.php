@@ -24,35 +24,35 @@
         <form action="regProducto.php" method="post" enctype="multipart/form-data">
             <div class="mb-3">
                 <label class="form-label">Nombre</label>
-                <input type="text" class="form-control" name="Nombre" id="">
+                <input type="text" class="form-control" name="Nombre" id="nombre-producto">
             </div>
             <div class="mb-3">
                 <label class="form-label">Tipo</label>
-                <input type="text" class="form-control" name="Tipo" id="">
+                <input type="text" class="form-control" name="Tipo" id="tipo-producto">
             </div>
             <div class="mb-3">
                 <label class="form-label">Fecha de creacion</label>
-                <input type="date" class="form-control" name="fechaCreacion" id="">
+                <input type="date" class="form-control" name="fechaCreacion" id="fecha-producto">
             </div>
             <div class="mb-3">
                 <label class="form-label">Ingredientes</label>
-                <input type="text" class="form-control" name="Ingredientes" id="">
+                <input type="text" class="form-control" name="Ingredientes" id="ingredienes-producto">
             </div>
             <div class="mb-3">
                 <label class="form-label">Imagen</label>
-                <input type="file" class="form-control" name="Imagen" id="" accept='image/*'>
+                <input type="file" class="form-control" name="Imagen" id="imagen-produco" accept='image/*'>
             </div>
             <div class="mb-3">
                 <label class="form-label">Descripcion</label>
-                <input type="text" class="form-control" name="Descripcion" id="">
+                <input type="text" class="form-control" name="Descripcion" id="descripcion-producto">
             </div>
             <div class="mb-3">
                 <label class="form-label">Precio</label>
-                <input type="number" class="form-control" name="Precio" id="">
+                <input type="number" class="form-control" name="Precio" id="precio-producto">
             </div>
             <div class="mb-3">
                 <label class="form-label">Descuento</label>
-                <input type="number" class="form-control" name="Descuento" id="">
+                <input type="number" class="form-control" name="Descuento" id="descuento-producto">
             </div>
 
 

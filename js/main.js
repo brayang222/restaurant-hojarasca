@@ -73,7 +73,7 @@ const botonCerrar = () => {
   navegacion.appendChild(btnCerrar);
   cerrarMenu(btnCerrar, overlay);
 };
-/*
+
 const observer = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -88,7 +88,7 @@ const observer = new IntersectionObserver((entries, observer) => {
 img.forEach(imagen => {
   observer.observe(imagen);
 });
-*/
+
 const cerrarMenu = (boton, overlay) => {
   boton.addEventListener("click", () => {
     navegacion.classList.add("ocultar");
