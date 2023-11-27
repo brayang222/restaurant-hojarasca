@@ -38,11 +38,6 @@ document.getElementById('logout-icon').addEventListener('click', function(event)
 const menu = document.querySelector(".hamburguesa");
 const navegacion = document.querySelector(".nav");
 const img = document.querySelectorAll('img');
-const btnTodos = document.querySelector('.Todos')
-const btnEnsaladas = document.querySelector('.ensaladas')
-const btnPasta = document.querySelector('.pasta')
-const btnPizza = document.querySelector('.pizza')
-const btnPostres = document.querySelector('.postres')
 const contenedorPlatillos = document.querySelector('.platillos')
 document.addEventListener("DOMContentLoaded", () => {
   eventos();
@@ -74,6 +69,7 @@ const botonCerrar = () => {
   cerrarMenu(btnCerrar, overlay);
 };
 
+/*
 const observer = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -87,7 +83,7 @@ const observer = new IntersectionObserver((entries, observer) => {
 
 img.forEach(imagen => {
   observer.observe(imagen);
-});
+}); */
 
 const cerrarMenu = (boton, overlay) => {
   boton.addEventListener("click", () => {

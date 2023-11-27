@@ -91,7 +91,7 @@
               <p class="price">
                 <?php echo  $a[7] ?>
               </p>
-              <button class="btn-add-cart">
+              <button class="btn-add-cart" data-id="<?php echo $a[0]; ?>" data-nombre="<?php echo $a[2]; ?>" data-precio="<?php echo $a[7]; ?>">
                 Añadir
               </button>
             </div>

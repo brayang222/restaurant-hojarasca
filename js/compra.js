@@ -1,16 +1,15 @@
 const menu = document.querySelector(".hamburguesa");
 const navegacion = document.querySelector(".nav");
-const img = document.querySelectorAll('img');
-const btnTodos = document.querySelector('.Todos')
-const btnEnsaladas = document.querySelector('.ensaladas')
-const btnPasta = document.querySelector('.pasta')
-const btnPizza = document.querySelector('.pizza')
-const btnPostres = document.querySelector('.postres')
-const contenedorPlatillos = document.querySelector('.platillos')
+const img = document.querySelectorAll("img");
+const btnTodos = document.querySelector(".Todos");
+const btnEnsaladas = document.querySelector(".ensaladas");
+const btnPasta = document.querySelector(".pasta");
+const btnPizza = document.querySelector(".pizza");
+const btnPostres = document.querySelector(".postres");
+const contenedorPlatillos = document.querySelector(".platillos");
 document.addEventListener("DOMContentLoaded", () => {
   platillos();
 });
-
 
 const botonCerrar = () => {
   const btnCerrar = document.createElement("p");
@@ -29,9 +28,8 @@ const botonCerrar = () => {
   cerrarMenu(btnCerrar, overlay);
 };
 
-
 const observer = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
+  entries.forEach((entry) => {
     if (entry.isIntersecting) {
       const imagen = entry.target;
       imagen.src = imagen.dataset.src;
@@ -40,10 +38,9 @@ const observer = new IntersectionObserver((entries, observer) => {
   });
 });
 
-
-img.forEach(imagen => {
+img.forEach((imagen) => {
   observer.observe(imagen);
-}); 
+});
 
 const cerrarMenu = (boton, overlay) => {
   boton.addEventListener("click", () => {
@@ -59,149 +56,156 @@ const cerrarMenu = (boton, overlay) => {
   };
 };
 
+// ******************************* FILTRO ***********************************************************
+
 const platillos = () => {
   let platillosArreglo = [];
-  const platillos = document.querySelectorAll('.platillo')
+  const platillos = document.querySelectorAll(".platillo");
 
-  platillos.forEach(platillo => platillosArreglo = [...platillosArreglo, platillo])
+  platillos.forEach(
+    (platillo) => (platillosArreglo = [...platillosArreglo, platillo])
+  );
 
-  const ensaladas = platillosArreglo.filter(ensalada => ensalada.getAttribute('data-platillo') === 'ensalada');
-  const pastas = platillosArreglo.filter(pasta => pasta.getAttribute('data-platillo') === 'pasta')
-  const pizzas = platillosArreglo.filter(pizza => pizza.getAttribute('data-platillo') === 'pizza')
-  const postres = platillosArreglo.filter(postre => postre.getAttribute('data-platillo') === 'postre')
+  const ensaladas = platillosArreglo.filter(
+    (ensalada) => ensalada.getAttribute("data-platillo") === "ensalada"
+  );
+  const pastas = platillosArreglo.filter(
+    (pasta) => pasta.getAttribute("data-platillo") === "pasta"
+  );
+  const pizzas = platillosArreglo.filter(
+    (pizza) => pizza.getAttribute("data-platillo") === "pizza"
+  );
+  const postres = platillosArreglo.filter(
+    (postre) => postre.getAttribute("data-platillo") === "postre"
+  );
 
   mostrarPlatillos(ensaladas, pastas, pizzas, postres, platillosArreglo);
-}
+};
 
 const mostrarPlatillos = (ensaladas, pastas, pizzas, postres, todos) => {
-  btnEnsaladas.addEventListener('click', () => {
+  btnEnsaladas.addEventListener("click", () => {
     limpiarHtml(contenedorPlatillos);
-    ensaladas.forEach(ensalada => contenedorPlatillos.appendChild(ensalada));
+    ensaladas.forEach((ensalada) => contenedorPlatillos.appendChild(ensalada));
   });
-  btnPasta.addEventListener('click', () => {
+  btnPasta.addEventListener("click", () => {
     limpiarHtml(contenedorPlatillos);
-    pastas.forEach(pasta => contenedorPlatillos.appendChild(pasta));
+    pastas.forEach((pasta) => contenedorPlatillos.appendChild(pasta));
   });
-  btnPizza.addEventListener('click', () => {
+  btnPizza.addEventListener("click", () => {
     limpiarHtml(contenedorPlatillos);
-    pizzas.forEach(pizza => contenedorPlatillos.appendChild(pizza));
+    pizzas.forEach((pizza) => contenedorPlatillos.appendChild(pizza));
   });
-  btnPostres.addEventListener('click', () => {
+  btnPostres.addEventListener("click", () => {
     limpiarHtml(contenedorPlatillos);
-    postres.forEach(postre => contenedorPlatillos.appendChild(postre));
+    postres.forEach((postre) => contenedorPlatillos.appendChild(postre));
   });
-  btnTodos.addEventListener('click', () => {
+  btnTodos.addEventListener("click", () => {
     limpiarHtml(contenedorPlatillos);
-    todos.forEach(todo => contenedorPlatillos.appendChild(todo));
+    todos.forEach((todo) => contenedorPlatillos.appendChild(todo));
   });
-
-}
+};
 
 const limpiarHtml = (contenedor) => {
   while (contenedor.firstChild) {
     contenedor.removeChild(contenedor.firstChild);
     /*Limpia el html para que sólo aparezca el boton seleccionado */
   }
-}
-
+};
 
 /*...............................................................................................*/
-const btnCart = document.querySelector('.container-cart-icon');
+const btnCart = document.querySelector(".container-cart-icon");
 const containerCartProducts = document.querySelector(
-  '.container-cart-products'
+  ".container-cart-products"
 );
 
-btnCart.addEventListener('click', () => {
-  containerCartProducts.classList.toggle('hidden-cart')
+btnCart.addEventListener("click", () => {
+  containerCartProducts.classList.toggle("hidden-cart");
 });
 
 /* ************************* */
-const cartInfo = document.querySelector('.cart-product');
-const rowProduct = document.querySelector('.row-product');
+const cartInfo = document.querySelector(".cart-product");
+const rowProduct = document.querySelector(".row-product");
 
 //Lista de los productos
-const productsList = document.querySelector('.platillos');
+const productsList = document.querySelector(".platillos");
 
 // Variable de arreglos de producto
 let allProducts = [];
-const valorTotal = document.querySelector('.total-pagar');
-const countProducts = document.querySelector('#contador-productos');
+const valorTotal = document.querySelector(".total-pagar");
+const countProducts = document.querySelector("#contador-productos");
 
-const cartEmpty = document.querySelector('.cart-empty');
-const cartTotal = document.querySelector('.cart-total');
-productsList.addEventListener('click', e => {
-  if (e.target.classList.contains('btn-add-cart')) {
+const cartEmpty = document.querySelector(".cart-empty");
+const cartTotal = document.querySelector(".cart-total");
+productsList.addEventListener("click", (e) => {
+  if (e.target.classList.contains("btn-add-cart")) {
     const product = e.target.parentElement;
     const product2 = e.target.parentElement.parentElement;
     // me muestra toda la extructura externa
     const infoProduct = {
       quantity: 1,
-      title: product2.querySelector('h2').textContent,
-      price: product.querySelector('p').textContent
+      title: product2.querySelector("h2").textContent,
+      price: product.querySelector("p").textContent,
     }; //para obtener el contenido del texto
 
-    const exits = allProducts.some(product => product.title === infoProduct.title)
+    const exits = allProducts.some(
+      (product) => product.title === infoProduct.title
+    );
     //vierifica si lo que contiene el title está 2 veces, devolverá un booleano
     if (exits) {
-      const products = allProducts.map(product => {
+      const products = allProducts.map((product) => {
         if (product.title === infoProduct.title) {
           product.quantity++;
           return product;
-        }
-        else {
+        } else {
           return product;
         }
       });
       allProducts = [...products];
-
     } else {
       allProducts = [...allProducts, infoProduct];
     }
 
     showHTML();
   }
-
 });
 //icon close
-rowProduct.addEventListener('click', e => {
-  if (e.target.classList.contains('icon-close')) {
+rowProduct.addEventListener("click", (e) => {
+  if (e.target.classList.contains("icon-close")) {
     const product = e.target.parentElement;
-    const title = product.querySelector('p').textContent;
+    const title = product.querySelector("p").textContent;
 
-    allProducts = allProducts.filter(product => product.title !== title);
+    allProducts = allProducts.filter((product) => product.title !== title);
     showHTML();
   }
 });
 
 // Función html
 const showHTML = () => {
-
   if (!allProducts.length) {
-    cartEmpty.classList.remove('hidden');
-    rowProduct.classList.add('hidden');
-    cartTotal.classList.add('hidden');
+    cartEmpty.classList.remove("hidden");
+    rowProduct.classList.add("hidden");
+    cartTotal.classList.add("hidden");
   } else {
-    cartEmpty.classList.add('hidden');
-    rowProduct.classList.remove('hidden');
-    cartTotal.classList.remove('hidden');
+    cartEmpty.classList.add("hidden");
+    rowProduct.classList.remove("hidden");
+    cartTotal.classList.remove("hidden");
   }
   //limpiar html
-  rowProduct.innerHTML = '';
+  rowProduct.innerHTML = "";
 
   let total = 0;
   let totalOfProduct = 0;
 
+  allProducts.forEach((product) => {
+    const containerProduct = document.createElement("div");
+    containerProduct.classList.add("cart-product");
 
-  allProducts.forEach(product => {
-    const containerProduct = document.createElement('div');
-    containerProduct.classList.add('cart-product');
-
-    containerProduct.innerHTML =
-
-      `<div class="info-cart-product">
+    containerProduct.innerHTML = `<div class="info-cart-product">
         <span class="cantidad-producto-carrito">${product.quantity}</span>
         <p class="titulo-producto-carrito">${product.title}</p>
-        <span class="precio-producto-carrito">$${product.quantity * product.price.slice(1)}</span>
+        <span class="precio-producto-carrito">$${
+          product.quantity * product.price.slice(1)
+        }</span>
     </div>
     <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -223,8 +227,50 @@ const showHTML = () => {
     total = total + parseInt(product.quantity * product.price.slice(1));
     //el slice sirve para quitar el signo de dólar, así sólo devuelve el número
     totalOfProduct = totalOfProduct + product.quantity;
-
   });
   countProducts.innerText = totalOfProduct;
   valorTotal.innerText = `$${total}`;
 };
+
+// ********************* PAGAR *****************************
+const totalPagarButton = document.getElementById("openModalBtn total-pagar");
+
+totalPagarButton.addEventListener("click", async () => {
+  if (allProducts.length === 0) {
+    alert("El carrito está vacío. Añade productos antes de pagar.");
+    return;
+  }
+
+  const productsToSend = allProducts.map((product) => {
+    return {
+      title: product.title,
+      quantity: product.quantity,
+      price: product.price.slice(1), // Eliminar el signo de dólar
+    };
+  });
+
+  try {
+    const response = await fetch("../php/procesar_pedido.php", {
+      method: "POST", // Enviar la información al servidor usando fetch y AJAX
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(productsToSend),
+    });
+
+    if (response.ok) {
+      const result = await response.json();
+      if (result.success) {
+        alert("Pedido procesado con éxito. Gracias por tu compra.");
+      } else {
+        alert("Error al procesar el pedido: " + result.error);
+      }
+    } else {
+      console.error("Error en la solicitud al servidor. Estado:", response.status);
+    }
+  } catch (error) {
+    console.error("Error al procesar la respuesta del servidor:", error);
+    alert("Error al procesar la respuesta del servidor. Por favor, inténtalo nuevamente.");
+  }
+});
+
