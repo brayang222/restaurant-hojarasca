@@ -50,7 +50,7 @@ $Consulta2 = mysqli_query($conn, $query2)
         $search = $_GET["Buscar"];
         $Buscar = "%$search%";
         include "conexion.php";
-        $query = "SELECT * FROM pedido WHERE idPedido LIKE '$Buscar' ";
+        $query = "SELECT * FROM pedidos WHERE idPedido LIKE '$Buscar' ";
         $cons = mysqli_query($conn, $query);
         while ($vec = mysqli_fetch_array($cons)) { ?>
           <tbody class="table-group-divider">

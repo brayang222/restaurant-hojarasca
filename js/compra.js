@@ -232,6 +232,49 @@ const showHTML = () => {
   valorTotal.innerText = `$${total}`;
 };
 
+// **************** MODAL PAGAR ******************************
+
+function openModal() {
+  document.getElementById("myModal").style.display = "flex";
+}
+
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+// Cierra el modal si el usuario hace clic fuera de él
+window.onclick = function (event) {
+  var modal = document.getElementById("myModal");
+  if (event.target == modal) {
+      modal.style.display = "none";
+  }
+}
+
+function mostrarCamposAdicionales() {
+  var pedidoOption = document.getElementById("pedidoOption").value;
+  var mesaField = document.querySelector(".mesa-field");
+  var direccionField = document.querySelector(".direccion-field");
+  var nombreField = document.querySelector(".nombre-field");
+  var telefonoField = document.querySelector(".telefono-field");
+
+  if (pedidoOption === "mesa") {
+      mesaField.style.display = "block";
+      direccionField.style.display = "none";
+      nombreField.style.display = "block";
+      telefonoField.style.display = "none";
+  } else if (pedidoOption === "domicilio") {
+      mesaField.style.display = "none";
+      direccionField.style.display = "block";
+      nombreField.style.display = "block";
+      telefonoField.style.display = "block";
+  } else {
+      mesaField.style.display = "none";
+      direccionField.style.display = "none";
+      nombreField.style.display = "none";
+      telefonoField.style.display = "none";
+  }
+}
+
 // ********************* PAGAR *****************************
 const totalPagarButton = document.getElementById("openModalBtn total-pagar");
 
@@ -241,6 +284,11 @@ totalPagarButton.addEventListener("click", async () => {
     return;
   }
 
+  const mesa = document.getElementById("mesa").value;
+  const direccion = document.getElementById("direccion").value;
+  const nombre = document.getElementById("nombre").value;
+  const telefono = document.getElementById("telefono").value;
+
   const productsToSend = allProducts.map((product) => {
     return {
       title: product.title,
@@ -249,13 +297,22 @@ totalPagarButton.addEventListener("click", async () => {
     };
   });
 
+  // Agregar datos adicionales al objeto enviado al servidor
+  const requestData = {
+    mesa: mesa,
+    direccion: direccion,
+    nombre: nombre,
+    telefono: telefono,
+    productos: productsToSend,
+  };
+
   try {
     const response = await fetch("../php/procesar_pedido.php", {
-      method: "POST", // Enviar la información al servidor usando fetch y AJAX
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(productsToSend),
+      body: JSON.stringify(requestData),
     });
 
     if (response.ok) {

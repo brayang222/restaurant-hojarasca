@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Compras</title>
   <script src="https://kit.fontawesome.com/c49d8236c4.js" crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,12 +13,61 @@
   <link rel="stylesheet" href="../css/normalize.css" />
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="icon" type="image/png" href="../assets/favicon.png">
+  <style>
+    .modal-pay {
+      display: none;
+      position: fixed;
+      z-index: 5;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .close-modal-pay {
+      padding: 2px 5px;
+    }
+
+    .close-modal-pay:hover {
+      background-color: red;
+      cursor: pointer;
+    }
+
+    #camposAdicionales {
+      margin-top: 20px;
+    }
+
+    .mesa-field,
+    .direccion-field,
+    .nombre-field,
+    .telefono-field {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-top: 5px;
+    }
+  </style>
 </head>
 
 <body>
   <main>
     <div class="volverMenu">
-      
+
       <a href="../index.html" class="btn"><i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i> Volver</a>
     </div>
     <section class="menu contenedor" id="menu section">
@@ -55,12 +104,57 @@
               <span class="total-pagar">0</span>
             </div>
             <div class="precio">
-              <button id="openModalBtn total-pagar" name="btn">
-                pagar
+              <button id="openModalBtn" name="btn" onclick="openModal()">
+                Pedir
               </button>
             </div>
           </div>
           <p class="cart-empty">El carrito está vacío</p>
+        </div>
+
+        <div id="myModal" class="modal-pay">
+          <div class="modal-content">
+            <span class="close-modal-pay" onclick="closeModal()">&times;</span>
+
+            <div class="pedido-option">
+              <label for="pedidoOption">Tipo de pedido:</label>
+              <select id="pedidoOption" onchange="mostrarCamposAdicionales()">
+                <option value="mesa">Pedir a mesa</option>
+                <option value="domicilio">Pedir a domicilio</option>
+              </select>
+            </div>
+            <div id="camposAdicionales">
+              <div class="mesa-field" style="display: block;">
+                <label for="mesa">Mesa:</label>
+                <select id="mesa">
+                  <!-- Opciones para elegir la mesa del 1 al 10 -->
+                  <?php for ($i = 1; $i <= 10; $i++) { ?>
+                    <option value="<?php echo $i; ?>">
+                      <?php echo $i; ?>
+                    </option>
+                  <?php } ?>
+                </select>
+              </div>
+              <div class="direccion-field" style="display: none;">
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" placeholder="Ingrese su dirección">
+              </div>
+              <div class="nombre-field" style="display: none;">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" placeholder="Ingrese su nombre">
+              </div>
+              <div class="telefono-field" style="display: none;">
+                <label for="telefono">Teléfono:</label>
+                <input type="text" id="telefono" placeholder="Ingrese su teléfono">
+              </div>
+            </div>
+
+            <div class="precio">
+              <button id="openModalBtn total-pagar" name="btn">
+                Enviar pedido
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -89,9 +183,10 @@
             </p>
             <div class="precio">
               <p class="price">
-                <?php echo  $a[7] ?>
+                <?php echo $a[7] ?>
               </p>
-              <button class="btn-add-cart" data-id="<?php echo $a[0]; ?>" data-nombre="<?php echo $a[2]; ?>" data-precio="<?php echo $a[7]; ?>">
+              <button class="btn-add-cart" data-id="<?php echo $a[0]; ?>" data-nombre="<?php echo $a[2]; ?>"
+                data-precio="<?php echo $a[7]; ?>">
                 Añadir
               </button>
             </div>
