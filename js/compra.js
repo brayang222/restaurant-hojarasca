@@ -318,7 +318,10 @@ totalPagarButton.addEventListener("click", async () => {
     if (response.ok) {
       const result = await response.json();
       if (result.success) {
-        alert("Pedido procesado con éxito. Gracias por tu compra.");
+        // Mostrar el ID del pedido en una alerta
+        alert("Pedido procesado con éxito. ID del pedido: " + result.pedidoId);
+        // Recargar la página después de aceptar la alerta
+        window.location.reload();
       } else {
         alert("Error al procesar el pedido: " + result.error);
       }

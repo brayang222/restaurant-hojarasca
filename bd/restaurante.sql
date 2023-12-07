@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 24-11-2023 a las 16:42:58
+-- Servidor: localhost:3307
+-- Tiempo de generación: 04-12-2023 a las 02:53:21
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -84,6 +84,7 @@ CREATE TABLE `pedido` (
 
 CREATE TABLE `producto` (
   `idPlatillo` int(11) NOT NULL,
+  `Tipo` varchar(100) DEFAULT NULL,
   `Nombre` varchar(45) NOT NULL,
   `fechaCreacion` date NOT NULL,
   `Ingredientes` varchar(200) NOT NULL,
@@ -97,8 +98,18 @@ CREATE TABLE `producto` (
 -- Volcado de datos para la tabla `producto`
 --
 
-INSERT INTO `producto` (`idPlatillo`, `Nombre`, `fechaCreacion`, `Ingredientes`, `Imagen`, `Descripcion`, `Precio`, `Descuento`) VALUES
-(2, 'Pasta pomodoro', '2023-10-11', '200 gramos de pasta, 1 cucharada sopera de aceite de oliva, ½ pieza de cebolla picada. 1 diente de ajo picado, 3 piezas de jitomate picado', '../Fotos/pastaPomodoro.jpg', 'a', 20000, 0);
+INSERT INTO `producto` (`idPlatillo`, `Tipo`, `Nombre`, `fechaCreacion`, `Ingredientes`, `Imagen`, `Descripcion`, `Precio`, `Descuento`) VALUES
+(2, 'pasta', 'Pasta pomodoro', '2023-10-11', '200 gramos de pasta, 1 cucharada sopera de aceite de oliva, ½ pieza de cebolla picada. 1 diente de ajo picado, 3 piezas de jitomate picado', '../Fotos/pastaPomodoro.jpg', 'a', 20000, 0),
+(4, 'pasta', 'Carbonara', '2023-11-25', '1 cucharada de sal kosher 12 onzas de espaguetis, bucatini o fettuccine 5 yemas de huevo grandes, a temperatura ambiente 1 taza de queso Pecorino Romano o parmesano recién rallado, además de más queso', '../Fotos/carbonara.webp', '', 23000, 0),
+(5, 'pasta', 'Tradicional', '2023-11-25', '200g Pasta larga seca 55g Mantequilla 40g Queso parmesano Sal Pimienta negra molida', '../Fotos/tradicional.jpg', '', 15000, 0),
+(6, 'ensalada', 'Ensalada verde', '0000-00-00', '1 cogollo de lechuga trocadero 1 pepino 1 aguacate 1/4 de cebolla 2 rabanitos', '../Fotos/ensaladaverde.jpg', '', 10000, 0),
+(7, 'ensalada', 'Ensalada mediterranea', '2023-11-25', '200 g de tomates cherry 1 cebolla roja pequeña 1 zanahoria mediana 100 g de brotes de lechuga 10 aceitunas verdes', '../Fotos/ensalada-mediterranea.jpg', '', 13000, 0),
+(8, 'ensalada', 'Ensalada waldorf', '0000-00-00', 'Lechuga Manzana Granny Smith Uvas Pasas Apio Nueces (ya peladas)', '../Fotos/waldorf.jpg', '', 15000, 0),
+(9, 'pizza', 'Pizza napolitana', '2023-11-25', '340 g de agua 2 g levadura seca o media cucharadita 1 cucharadita de azúcar 450 g de harina de fuerza 50 g de sémola', '../Fotos/napolitana.jpg', '', 27000, 0),
+(12, 'pizza', 'Pizza tradicional', '0000-00-00', '1 kg de farinha de trigo 300 ml de leite 3 1/2 de fermento de pão 1 colher de sopa de margarina 2 pitadas de sal', '../Fotos/pizza2.webp', '', 30000, 0),
+(13, 'pizza', 'Pizza pepperoni', '0000-00-00', 'Ingredientes Para la masa de pizza (para 2 pizzas de 33 cm) 2 y 1/4 cucharaditas de levadura seca 2 cucharaditas de azúcar 375 ml de agua caliente (sin quemar)', '../Fotos/pizza-pepperoni.jpg', '', 32000, 0),
+(14, 'postre', 'Postre frutos rojos', '2023-11-25', 'Postre frutos rojos', '../Fotos/postres3.webp', '500 gramos de yogur griego 1 sobre de gelatina sin sabor Galletas de dulce (al gusto) 75 gramos de mantequilla sin sal 500 gramos de frutos rojos', 8000, 0),
+(15, 'postre', 'Postre chocolate', '2023-11-25', '500 gramos de yogur griego 1 sobre de gelatina sin sabor Galletas de dulce (al gusto) 75 gramos de mantequilla sin sal 500 gramos de frutos rojos', '../Fotos/postres2.webp', '', 9000, 0);
 
 -- --------------------------------------------------------
 
@@ -176,7 +187,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `idPlatillo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idPlatillo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`

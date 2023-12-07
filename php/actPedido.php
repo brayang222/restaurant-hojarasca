@@ -3,30 +3,26 @@ if (isset($_POST["Actualizar"])){
 
 include 'Conexion.php';
 $Id = $_POST['idPedido'];
-$Mesa = $_POST['Mesa'];
-$FechaPedido = $_POST['FechaPedido'];
-$TiempoEstimado = $_POST['TiempoEstimado'];
 $Total = $_POST['Total'];
-$Estado = $_POST['Estado'];
+$HoraPedido = $_POST['HoraPedido'];
+$Productos = $_POST['Productos'];
+$Mesa = $_POST['Mesa'];
+$Direccion = $_POST['Direccion'];
 $Cliente = $_POST['Cliente'];
-$Empleado = $_POST['Empleado'];
-
+$Telefono = $_POST['Telefono'];
 
 $query ="UPDATE
-      pedido SET  idPedido = '$Id', Mesa = '$Mesa', FechaPedido = '$FechaPedido', TiempoEstimado = '$TiempoEstimado',
-      Total = '$Total', Estado = '$Estado', Cliente = '$Cliente', Empleado = '$Cliente' where  idPedido = $Id 
-        ";
+      pedidos SET idPedido = '$Id', Total = '$Total', HoraPedido = '$HoraPedido', Productos = '$Productos',
+      Mesa = '$Mesa', Direccion = '$Direccion', Nombre = '$Cliente',  Telefono = '$Telefono', 
+      Estado = 'Pedido' where  idPedido = $Id";
 $Consulta=mysqli_query($conn, $query);
 
 if ($Consulta) {
-    echo "Se actualizó la empresa a la bd a la tabla correspondiente" . "<br>";
-    echo "<a href='mostrarE.php'>Volver</a>";
+    echo "Se actualizó el pedido a la bd a la tabla correspondiente" . "<br>";
+    echo "<a href='mostrarP.php'>Volver</a>";
 }else {
     echo "Hay un error en la consulta";
 }
-
-//empresa(NITempresa,RazonSocial,Tipo,PáginaWeb,Correo,TelefonoLaboral,Contraseña)
-    //    VALUES('$NIT','$Rsocial','$Tipo','$PaginaWeb','$CorreoE','$TelefonoE','$ContraseñaE')"
 
 }
 ?>
