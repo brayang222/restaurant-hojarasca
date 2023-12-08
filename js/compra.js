@@ -250,6 +250,14 @@ window.onclick = function (event) {
   }
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+  mostrarCamposAdicionales();
+
+  document.getElementById("pedidoOption").addEventListener("change", function() {
+    mostrarCamposAdicionales();
+  });
+});
+
 function mostrarCamposAdicionales() {
   var pedidoOption = document.getElementById("pedidoOption").value;
   var mesaField = document.querySelector(".mesa-field");
@@ -273,6 +281,8 @@ function mostrarCamposAdicionales() {
       nombreField.style.display = "none";
       telefonoField.style.display = "none";
   }
+console.log("Pedido Option:", pedidoOption);
+
 }
 
 // ********************* PAGAR *****************************
@@ -332,5 +342,6 @@ totalPagarButton.addEventListener("click", async () => {
     console.error("Error al procesar la respuesta del servidor:", error);
     alert("Error al procesar la respuesta del servidor. Por favor, inténtalo nuevamente.");
   }
+  
 });
 

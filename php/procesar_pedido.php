@@ -1,7 +1,7 @@
 <?php
 include "conexion.php";
 
-session_start(); // Iniciar la sesión
+session_start(); // Inicia la sesión para revisar los nuevos pedidos 
 
 $data = json_decode(file_get_contents("php://input"), true);
 header('Content-Type: application/json; charset=utf-8');
@@ -12,10 +12,10 @@ try {
     $direccion = isset($data['direccion']) ? $data['direccion'] : null;
     $nombre = isset($data['nombre']) ? $data['nombre'] : null;
     $telefono = isset($data['telefono']) ? $data['telefono'] : null;
-
-    $stmt = $conn->prepare("INSERT INTO pedidos (productos, mesa, direccion, nombre, total, horaPedido) VALUES (?, ?, ?, ?, ?, NOW())");
+    
+    $stmt = $conn->prepare("INSERT INTO pedidos (productos, mesa, direccion, nombre, total, horaPedido, telefono) VALUES (?, ?, ?, ?, ?, NOW(), ?)");
     $total = 0;
-    $stmt->bind_param("ssssd", $productos, $mesa, $direccion, $nombre, $total);
+    $stmt->bind_param("ssssds", $productos, $mesa, $direccion, $nombre, $total, $telefono);
 
     $productosArray = array();
     foreach ($data['productos'] as $producto) {

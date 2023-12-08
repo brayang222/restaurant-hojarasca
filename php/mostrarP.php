@@ -30,13 +30,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["id"])) {
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-  <link rel="stylesheet" href="../alert/alert.css">
 
 </head>
 
 <body style="background-color: #111821; text-align: center; color: white">
   <div class="volverMenu" style="background-color: gray">
-    <a href="index.php" class="btn"><i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i> Volver</a>
+    <a href="../index.php" class="btn"><i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i> Volver</a>
   </div>
   <h1 style="margin: 70px auto">Mostrar pedidos</h1>
   <form class="d-flex container" role="search">

@@ -1,3 +1,24 @@
+<?php
+session_start();
+include "conexion.php";
+
+// Verificar si el usuario ha iniciado sesión
+if (isset($_SESSION["Correo"])) {
+  $correoUsuario = $_SESSION["Correo"];
+
+  // Obtener datos del usuario desde la base de datos
+  $queryUsuario = mysqli_query($conn, "SELECT * FROM usuarios WHERE Correo = '$correoUsuario'");
+  $usuario = mysqli_fetch_array($queryUsuario);
+
+  // Verificar si se encontraron datos del usuario
+  if ($usuario) {
+    $nombreUsuario = $usuario[4];
+    $direccionUsuario = $usuario[3];
+    $telefonoUsuario = $usuario[5];
+  }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,38 +35,6 @@
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="icon" type="image/png" href="../assets/favicon.png">
   <style>
-    .modal-pay {
-      display: none;
-      position: fixed;
-      z-index: 5;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .close-modal-pay {
-      padding: 2px 5px;
-    }
-
-    .close-modal-pay:hover {
-      background-color: red;
-      cursor: pointer;
-    }
-
-    #camposAdicionales {
-      margin-top: 20px;
-    }
-
-    .mesa-field,
-    .direccion-field,
-    .nombre-field,
-    .telefono-field {
-      margin-bottom: 15px;
-    }
-
     label {
       display: block;
       font-weight: bold;
@@ -68,7 +57,7 @@
   <main>
     <div class="volverMenu">
 
-      <a href="../index.html" class="btn"><i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i> Volver</a>
+      <a href="../index.php" class="btn"><i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i> Volver</a>
     </div>
     <section class="menu contenedor" id="menu section">
       <h2 class="texto-platillos">Platillos populares</h2>
@@ -119,14 +108,15 @@
             <div class="pedido-option">
               <label for="pedidoOption">Tipo de pedido:</label>
               <select id="pedidoOption" onchange="mostrarCamposAdicionales()">
-                <option value="mesa">Pedir a mesa</option>
-                <option value="domicilio">Pedir a domicilio</option>
+                <option value="mesa" data-tipo="mesa">Pedir a mesa</option>
+                <option value="domicilio" data-tipo="domicilio">Pedir a domicilio</option>
               </select>
             </div>
             <div id="camposAdicionales">
               <div class="mesa-field" style="display: block;">
                 <label for="mesa">Mesa:</label>
                 <select id="mesa">
+                <option value="" aria-placeholder="Selecciona..."></option>
                   <!-- Opciones para elegir la mesa del 1 al 10 -->
                   <?php for ($i = 1; $i <= 10; $i++) { ?>
                     <option value="<?php echo $i; ?>">
@@ -137,20 +127,23 @@
               </div>
               <div class="direccion-field" style="display: none;">
                 <label for="direccion">Dirección:</label>
-                <input type="text" id="direccion" placeholder="Ingrese su dirección">
+                <input type="text" id="direccion" placeholder="Ingrese su dirección"
+                  value="<?php echo isset($direccionUsuario) ? $direccionUsuario : ''; ?>">
               </div>
-              <div class="nombre-field" style="display: none;">
+              <div class="nombre-field" style="display: block;">
                 <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" placeholder="Ingrese su nombre">
+                <input type="text" id="nombre" placeholder="Ingrese su nombre"
+                  value="<?php echo isset($nombreUsuario) ? $nombreUsuario : ''; ?>">
               </div>
               <div class="telefono-field" style="display: none;">
                 <label for="telefono">Teléfono:</label>
-                <input type="text" id="telefono" placeholder="Ingrese su teléfono">
+                <input type="text" id="telefono" placeholder="Ingrese su teléfono" name="telefono"
+                  value="<?php echo isset($telefonoUsuario) ? $telefonoUsuario : ''; ?>">
               </div>
             </div>
 
             <div class="precio">
-              <button id="openModalBtn total-pagar" name="btn">
+              <button id="openModalBtn total-pagar" name="btn" >
                 Enviar pedido
               </button>
             </div>

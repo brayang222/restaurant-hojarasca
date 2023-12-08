@@ -666,7 +666,8 @@ main .volverMenu a {
   background-color: white;
   padding: 20px;
   border-radius: 5px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.08);
+
 }
 
 .modal-close {
@@ -1137,6 +1138,37 @@ body.dark .container-cart-products {
 
 .hidden {
   display: none;
+}
+
+.modal-pay {
+  display: none;
+  position: fixed;
+  z-index: 5;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.close-modal-pay {
+  padding: 2px 5px;
+}
+
+.close-modal-pay:hover {
+  background-color: red;
+  cursor: pointer;
+}
+
+#camposAdicionales {
+  margin-top: 20px;
+}
+
+.mesa-field,
+.direccion-field,
+.nombre-field,
+.telefono-field {
+  margin-bottom: 15px;
 }
 
 /* Nocturno */
