@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+h1 {
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pedido {
+border: 1px solid #ccc;
+padding: 10px;
+margin-bottom: 20px;
+background-color: #fff;
+}
+
+#myModal {
+display: none;
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+padding: 20px;
+background-color: #4e73df;
+color: #fff;
+z-index: 3;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Agregamos una sombra al modal */
+}
+
+#myModal input,
+#myModal button,
+#myModal textarea {
+display: block;
+margin: 10px 0;
+width: calc(100% - 20px);
+padding: 10px;
+box-sizing: border-box;
+border: none;
+border-radius: 5px;
+font-size: 16px;
+}
+
+#editProductos {
+height: 200px;
+resize: vertical;
+}
+
+#myModal label {
+display: block;
+margin-top: 10px;
+font-size: 18px;
+}
+
+#myModal button {
+background-color: #1cc88a;
+color: #fff;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+#myModal button:hover {
+background-color: #17a673;
+}
+
+.container {
+  width: 700px;
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.container>.pedido {
+  width: 300px;
+}
+
+.center {
+  display: flex;
+  justify-content: space-evenly;
+}
