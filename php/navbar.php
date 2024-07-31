@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 
 // Incluir aquí la lógica para manejar el inicio de sesión si es necesario
 
