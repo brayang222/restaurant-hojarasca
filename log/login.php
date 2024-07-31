@@ -1,15 +1,15 @@
 <?php
-if(isset($_POST["btn"])) {
+if(isset($_POST["btn-login"])) {
   $doc = $_POST["doc"];
   $clave = $_POST["clave"];
   include '../php/conexion.php';
   $q="SELECT * FROM usuarios
       WHERE Correo='$doc' and Clave='$clave'";
   $c=mysqli_query($conn, $q);
-  echo "no entro";
+  //echo "no entro";
 
   if(mysqli_num_rows($c)== 1){
-    echo "entro";
+    //echo "entro";
     $v=mysqli_fetch_array($c);
     session_start();
     $_SESSION["Correo"]=$v[1];
@@ -27,10 +27,9 @@ if(isset($_POST["btn"])) {
           window.location.href='../php/mostrarP.php';</script>";
     } else if($v["Rol"]== 4) {
       echo "<script>alert('Bienvenido usuario');
-          window.location.href='../php/compraDinamica.php';</script>";
+          window.location.href='../index.php';</script>";
     }
   } else {
     echo "<script>alert('usuario o contraseña incorrectos');</script>";
   }
 }
-?>

@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <meta name="description" content="Restaurante con gestion de productos.">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" name="compatible"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" name="compatible" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Restaurant hojarasca</title>
   <script src="https://kit.fontawesome.com/c49d8236c4.js" crossorigin="anonymous"></script>
@@ -16,55 +15,10 @@
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
-
 <body>
   <div id="loader"></div>
-
   <header class="encabezado" id="content">
-  <div class="navegacion">
-      <div class="cont-nav container-icon">
-        <div class="logo">
-          <h2>
-            Restautant <span class="amarillo">Hoja</span><span class="azul">ras</span><span class="rojo">ca</span>
-          </h2>
-        </div>
-
-        <nav class="nav ocultar" id="inicio">
-          <a href="#inicio">Inicio</a>
-          <a href="#sobrenosotros">Sobre nosotros</a>
-          <a href="#menu">Menú</a>
-          <a href="#chef">Chef</a>
-          <a href="#contacto">Contacto</a>
-          <div class="aling"><button class="switch " id="switch">
-              <span><i class="fa-solid fa-sun"></i></span>
-              <span><i class="fa-solid fa-moon"></i></span>
-            </button></div>
-
-        </nav>
-        <div class="cont-nav-aside">
-          <div class="popup-container">
-            <div class="ingresar">
-              <i class="fa-regular fa-user"></i>
-            </div>
-
-          <div class="popup-content">
-         
-            
-          </div>
-        </div>
-          <div class="salir" id="logout-icon">
-            <a href="log/logout.php" class="icon-logouts" aria-label="Cerrar sesión">
-              <i class="fa-solid fa-right-from-bracket"></i>
-            </a>
-
-          </div>
-          <div class="hamburguesa"><span></span><span></span><span></span></div>
-
-        </div>
-
-      </div>
-    </div>
-    
+    <?php include 'php/navbar.php' ?>
     <div class="contenido-header">
       <div class="contenedor-encabezado">
         <div class="texto-encabezado">
@@ -78,7 +32,6 @@
       </div>
     </div>
   </header>
-
   <div class="contenedor-nosotros contenedor">
     <div class="texto-nosotros">
       <p class="bienvenida" id="sobrenosotros">Bienvenido a!</p>
@@ -103,7 +56,6 @@
       </div>
     </div>
   </div>
-
   <div class="separador">
     <div class="contenido-separador contenedor">
       <h2>Comida Colombiana para cualquier hora del día</h2>
@@ -167,7 +119,6 @@
       </div>
       <div class="input-formulario">
         <label for="mensaje">Mensaje<textarea></textarea></label>
-        
       </div>
       <div class="btn-formulario">
         <input type="submit" value="Enviar" class="btn btn-verde" />
@@ -208,7 +159,5 @@
     </p>
   </footer>
   <script src="js/main.js">  </script>
-
 </body>
-
 </html>

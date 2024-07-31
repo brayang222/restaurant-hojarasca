@@ -250,12 +250,21 @@ window.onclick = function (event) {
   }
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+  mostrarCamposAdicionales();
+
+  document.getElementById("pedidoOption").addEventListener("change", function() {
+    mostrarCamposAdicionales();
+  });
+});
+
 function mostrarCamposAdicionales() {
   var pedidoOption = document.getElementById("pedidoOption").value;
   var mesaField = document.querySelector(".mesa-field");
   var direccionField = document.querySelector(".direccion-field");
   var nombreField = document.querySelector(".nombre-field");
   var telefonoField = document.querySelector(".telefono-field");
+  var mesaSelect = document.getElementById("mesa");
 
   if (pedidoOption === "mesa") {
       mesaField.style.display = "block";
@@ -267,12 +276,15 @@ function mostrarCamposAdicionales() {
       direccionField.style.display = "block";
       nombreField.style.display = "block";
       telefonoField.style.display = "block";
+      mesaSelect.value = "";
   } else {
       mesaField.style.display = "none";
       direccionField.style.display = "none";
       nombreField.style.display = "none";
       telefonoField.style.display = "none";
   }
+console.log("Pedido Option:", pedidoOption);
+
 }
 
 // ********************* PAGAR *****************************
@@ -288,23 +300,25 @@ totalPagarButton.addEventListener("click", async () => {
   const direccion = document.getElementById("direccion").value;
   const nombre = document.getElementById("nombre").value;
   const telefono = document.getElementById("telefono").value;
+  const idUsuario = document.getElementById("idUsuario").value;
 
   const productsToSend = allProducts.map((product) => {
     return {
       title: product.title,
       quantity: product.quantity,
-      price: product.price.slice(1), // Eliminar el signo de dólar
+      price: product.price.slice(1), 
     };
   });
 
-  // Agregar datos adicionales al objeto enviado al servidor
   const requestData = {
     mesa: mesa,
     direccion: direccion,
     nombre: nombre,
     telefono: telefono,
+    idUsuario: idUsuario,
     productos: productsToSend,
   };
+  
 
   try {
     const response = await fetch("../php/procesar_pedido.php", {
@@ -318,7 +332,10 @@ totalPagarButton.addEventListener("click", async () => {
     if (response.ok) {
       const result = await response.json();
       if (result.success) {
-        alert("Pedido procesado con éxito. Gracias por tu compra.");
+        // Mostrar el ID del pedido en una alerta
+        alert("Pedido procesado con éxito. ID del pedido: " + result.pedidoId);
+        // Recargar la página después de aceptar la alerta
+        window.location.reload();
       } else {
         alert("Error al procesar el pedido: " + result.error);
       }
@@ -329,5 +346,6 @@ totalPagarButton.addEventListener("click", async () => {
     console.error("Error al procesar la respuesta del servidor:", error);
     alert("Error al procesar la respuesta del servidor. Por favor, inténtalo nuevamente.");
   }
+  
 });
 
