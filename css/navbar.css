@@ -1,0 +1,401 @@
+#loader {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 500;
+  overflow: visible;
+  background: #000 url(../assets/loader.webp) center no-repeat cover;
+  background-size: cover;
+  object-fit: cover;
+}
+
+:root {
+  --azul: #000d71;
+  --amarillo: #ffc300;
+  --verde: #00a149;
+  --blanco: #fff;
+  --rojo: #881014;
+  --negro: #000;
+  --titulos: "Arima Madurai", cursive;
+  --parrafos: "Mulish", sans-serif;
+  --grisOscuro: #222222;
+  --grisClaro: #c8c8c8;
+  --grisClaroHover: #acabab;
+  --azulClaro: #254be6;
+  --azulClaroHover: #254be6;
+}
+html {
+  background-size: cover;
+  box-sizing: border-box;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  /*para hacer más suave las trancisiones*/
+}
+/*el font-size hace que el rem, que por defecto viene de 16, se ponga en múltiplos de 10*/
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  background-size: cover;
+  font-size: 1.6rem;
+  overflow-x: hidden;
+  /*Oculta la barra de scroll*/
+  background-color: var(--blanco);
+  transition: 0.3s ease all;
+}
+
+body.dark {
+  background: #000;
+  color: var(--blanco);
+  transition: 0.5s ease all;
+}
+/*Global*/
+
+.contenedor {
+  max-width: 120rem;
+  margin: 0 auto;
+  width: 95%;
+}
+
+h1,
+h2 {
+  font-family: var(--titulos);
+}
+
+h3,
+p,
+a {
+  font-family: var(--parrafos);
+}
+
+img {
+  max-width: 100%;
+  /*para que se acomoden a su contenedor padre*/
+}
+
+.amarillo {
+  color: var(--amarillo);
+}
+
+.azul {
+  color: #168beb;
+}
+
+.rojo {
+  color: #e22128;
+}
+
+.ocultar {
+  display: none;
+}
+
+.btn-cerrar {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--blanco);
+  position: absolute;
+  top: 0;
+  right: 50px;
+  user-select: none;
+  /*para que no quede seleccionado*/
+}
+
+.pantalla-completa {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 4;
+}
+
+@keyframes desplazamiento {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.popup-container {
+  position: relative;
+  display: inline-block;
+}
+
+.popup-content {
+  display: none;
+  position: absolute;
+  background-color: #121236;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  padding: 20px;
+  border-radius: 5px;
+  top: 30px;
+  right: 0;
+  z-index: 1;
+  width: 350px;
+}
+
+.popup-container:hover .popup-content {
+  display: block;
+}
+
+.popup-content p {
+  padding: 10px;
+  margin: 0;
+  color: whitesmoke;
+  font-size: 20px;
+}
+
+@media (max-width: 768px) {
+    .popup-content p {
+        font-size: 15px;
+    }
+    .popup-content{
+      width: 300px;
+      right: -40px;
+    }
+  }
+
+.popup-content span {
+    font-weight: bold; 
+}
+
+.popup-content img {
+    padding: 0 10px;
+    max-width: 100px; 
+    height: auto;
+    border-radius: 50%; 
+  }
+
+.fa-user::before {
+  font-size: 33px;
+  color: white;
+}
+
+.btn-cerrar:hover {
+  cursor: pointer;
+}
+
+.btn {
+  text-decoration: none;
+  color: var(--blanco);
+  font-size: 2rem;
+  text-transform: capitalize;
+  /*Para que la primera letra de cada palabra sea mayúscula*/
+  padding: 1rem 5rem;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+@media (min-width: 768px) {
+  .btn {
+    font-size: 2.2rem;
+  }
+}
+
+.bordes {
+  border: 3px solid var(--blanco);
+}
+
+@media (min-width: 768px) {
+  .bordes {
+    border: 4px solid var(--blanco);
+  }
+}
+
+.bordes:hover {
+  background-color: var(--blanco);
+  color: var(--azul);
+}
+
+.btn-rojo {
+  background-color: #881014;
+  font-weight: bold;
+  display: inline-block;
+  margin: 2rem;
+  margin-bottom: 2rem;
+}
+
+.btn-verde {
+  background-color: #000d71;
+  border: none;
+  display: inline-block;
+  margin-bottom: 2rem;
+  font-family: var(--parrafos);
+}
+
+.btn-verde:hover {
+  background-color: #e1e1e1;
+  color: #000;
+  cursor: pointer;
+}
+/*Encabezado*/
+
+.navegacion {
+  background-color: var(--negro);
+  position: relative;
+  z-index: 5;
+}
+
+.cont-nav-aside {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+}
+
+.cont-nav-aside > .ingresar > a,
+.popup-content > .salir > a {
+  color: white;
+  font-size: 36px;
+  margin-bottom: 0.7rem;
+}
+
+@media (max-width: 768px) {
+  .ingresar,
+  .salir {
+    font-size: 24px;
+  }
+}
+
+.cont-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo h2,
+.nav a {
+  color: var(--blanco);
+}
+
+.logo h2 {
+  margin-left: 40px;
+  font-size: 3rem;
+}
+
+.nav {
+  overflow-y: auto;
+}
+
+.nav a {
+  text-decoration: none;
+  /*Para quitarle las líneas a los enlaces*/
+  font-size: 2.2rem;
+  padding: 1.5rem;
+  padding: 4rem;
+  display: block;
+  transition: color 0.3s ease-in-out;
+  /*Suaviza la transición*/
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .nav a {
+    text-align: left;
+  }
+}
+
+/* MODO OSCURO */
+
+.switch {
+  background: #343d5b;
+  border-radius: 1000px;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  outline: none;
+}
+
+.switch::after {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  background: var(--blanco);
+  top: 0px;
+  left: 1px;
+  right: unset;
+  border-radius: 100px;
+  transition: 0.3s ease all;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+  font-size: 2.2rem;
+}
+
+.switch.active {
+  background: orange;
+  color: #000;
+}
+
+.switch.active::after {
+  right: 1px;
+  left: unset;
+}
+
+.switch span {
+  width: 28px;
+  height: 28px;
+  line-height: 30px;
+  display: block;
+  background: none;
+  color: var(--blanco);
+}
+
+.aling {
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .aling {
+    text-align: left;
+    padding: 4rem;
+  }
+}
+
+/* SWITCH */
+
+.nav a:nth-child(even):hover {
+  /*Le coloca el style a los pares*/
+  color: var(--rojo);
+}
+.nav a:nth-child(odd):hover {
+  color: aqua;
+}
+.nav a:first-of-type {
+  /*Para modificar sólo el primer "a"*/
+  margin-top: 5rem;
+}
+
+.nav {
+  position: absolute;
+  /*El absolute hace que se pueda mover a su antojo y necesidad*/
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 40rem;
+  padding: 3rem 4rem;
+  background-color: black;
+  animation: desplazamiento 0.5s ease-in-out;
+}
+
+.hamburguesa:hover {
+  cursor: pointer;
+}
+
+.hamburguesa span {
+  background-color: var(--blanco);
+  display: block;
+  /*Para que se ponga uno debajo del otro*/
+  width: 5rem;
+  height: 0.5rem;
+  margin-bottom: 0.7rem;
+  margin-right: 40px;
+}

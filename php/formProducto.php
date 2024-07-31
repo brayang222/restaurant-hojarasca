@@ -8,6 +8,15 @@
     <title>Formulario producto</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <link rel="stylesheet" href="../css/normalize.css" />
+        <link rel="stylesheet" href="../css/navbar.css" />    
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <style>
+    html {
+    font-size: 80.5% !important; 
+    /*para hacer más suave las trancisiones*/
+}
+  </style>
 </head>
 
 <body style="background-color: #111821;">
@@ -66,6 +75,7 @@
     cursor: pointer;">
         </form>
     </div>
+    <script src="../js/main.js">  </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
         crossorigin="anonymous"></script>
@@ -76,6 +86,7 @@
         integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
         crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/c36cb32bff.js" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

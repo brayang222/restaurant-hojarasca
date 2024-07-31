@@ -34,6 +34,7 @@ if (isset($_SESSION["Correo"])) {
     rel="stylesheet" />
   <link rel="stylesheet" href="../css/normalize.css" />
   <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/navbar.css" />
   <link rel="icon" type="image/png" href="../assets/favicon.png">
   <style>
     label {
@@ -166,22 +167,22 @@ if (isset($_SESSION["Correo"])) {
         include "conexion.php";
         $q = mysqli_query($conn, "SELECT * FROM producto");
         while ($a = mysqli_fetch_array($q)) { ?>
-          <div class="platillo" data-platillo="<?php echo $a[1] ?>">
+          <div class="platillo" data-platillo="<?php echo $a[8] ?>">
             <div class="imagen-platillo">
-              <img data-src="<?php echo $a[5] ?>" alt="<?php echo $a[1] ?>" />
+              <img data-src="<?php echo $a[4] ?>" alt="<?php echo $a[1] ?>" />
             </div>
             <h2>
-              <?php echo $a[2] ?>
+              <?php echo $a[1] ?>
             </h2>
             <p class="parrafo-platillo">
-              <?php echo $a[4] ?>
+              <?php echo $a[3] ?>
             </p>
             <div class="precio">
               <p class="price">
-                <?php echo $a[7] ?>
+                <?php echo $a[6] ?>
               </p>
               <button class="btn-add-cart" data-id="<?php echo $a[0]; ?>" data-nombre="<?php echo $a[2]; ?>"
-                data-precio="<?php echo $a[7]; ?>">
+                data-precio="<?php echo $a[6]; ?>">
                 Añadir
               </button>
             </div>
