@@ -22,14 +22,49 @@ session_start();
   <link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
 <body>
-  <div id="loader"></div>
   <header class="encabezado" id="content">
-    <?php include 'php/navbar.php' ?>
+  <div class="navegacion">
+      <div class="cont-nav container-icon">
+        <div class="logo">
+          <h2>
+            Restautant <span class="amarillo">Hoja</span><span class="azul">ras</span><span class="rojo">ca</span>
+          </h2>
+        </div>
+        <nav class="nav ocultar" id="inicio">
+          <a href="#inicio">Inicio</a>
+          <a href="#sobrenosotros">Sobre nosotros</a>
+          <a href="#menu">Menú</a>
+          <a href="#chef">Chef</a>
+          <a href="#contacto">Contacto</a>
+          <div class="aling"><button class="switch " id="switch">
+              <span><i class="fa-solid fa-sun"></i></span>
+              <span><i class="fa-solid fa-moon"></i></span>
+            </button></div>
+        </nav>
+        <div class="cont-nav-aside">
+          <div class="popup-container">
+            <div class="ingresar">
+              <i class="fa-regular fa-user"></i>
+            </div>
+          <div class="popup-content">
+         
+            
+          </div>
+        </div>
+          <div class="salir" id="logout-icon">
+            <a href="log/logout.php">
+              <i class="fa-solid fa-right-from-bracket"></i>
+            </a>
+          </div>
+          <div class="hamburguesa"><span></span><span></span><span></span></div>
+        </div>
+      </div>
+    </div>
     <div class="contenido-header">
       <div class="contenedor-encabezado">
         <div class="texto-encabezado">
           <h2>Bienvenido!</h2>
-          <a href="php/compraDinamica.php" class="btn bordes">Nuestro menú</a>
+          <a href="compra.html" class="btn bordes">Nuestro menú</a>
         </div>
         <video autoplay loop muted>
           <source src="assets/bg_video.mp4" />

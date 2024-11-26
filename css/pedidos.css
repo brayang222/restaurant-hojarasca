@@ -13,24 +13,24 @@ h1 {
 }
 
 .pedido {
-border: 1px solid #ccc;
-padding: 10px;
-margin-bottom: 20px;
-background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #fff;
 }
 
 #myModal {
-display: none;
-position: fixed;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-padding: 20px;
-background-color: #4e73df;
-color: #fff;
-z-index: 3;
-border-radius: 10px;
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Agregamos una sombra al modal */
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #4e73df;
+  color: #fff;
+  z-index: 3;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
 }
 
 #myModal input,

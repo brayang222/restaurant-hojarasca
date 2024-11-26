@@ -3,7 +3,7 @@
 
 // Incluir aquí la lógica para manejar el inicio de sesión si es necesario
 
-$navbarClass = '';
+$navbarClass = 'user-navbar';
 if(isset($_SESSION["Correo"])) {
   $Rol = $_SESSION["Rol"];
   if($Rol == 1) {
@@ -15,14 +15,6 @@ if(isset($_SESSION["Correo"])) {
 
 ?>
 
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-
-<body>
   <div class="navegacion <?php echo $navbarClass; ?>">
     <div class="cont-nav container-icon">
       <div class="logo">
@@ -103,7 +95,3 @@ if(isset($_SESSION["Correo"])) {
       </div>
     </div>
   </div>
-  <script src="js/main.js"></script>
-</body>
-
-</html>
